@@ -29,14 +29,14 @@ function Header() {
   ];
 
   return (
-    <div className="hidden md:block z-30">
+    <div className="block z-30">
       <div className="flex flex-row justify-between items-center px-5 pt-5 pb-3">
         <NavLink to="/">
           <img className="w-20 md:w-28" src={logo} alt="Logo" />
         </NavLink>
 
         {/* Links */}
-        <ul className="main-menu">
+        <ul className="hidden md:block main-menu">
           {links.map((link) => {
             return (
               <NavLink to={link.href}>
@@ -47,8 +47,11 @@ function Header() {
         </ul>
 
         {/* Profile  */}
-        <div className="hidden md:flex items-center gap-2">
-          <a href="https://service-handys.netlify.app/">
+        <div className="flex items-center gap-2">
+          <a
+            className="hidden md:block"
+            href="https://service-handys.netlify.app/"
+          >
             <p>Switch to customer portal</p>
           </a>
 
@@ -83,7 +86,7 @@ function Header() {
           </div>
           {/* END OF NOTIFICATIONS MODAL */}
 
-          <img className="w-10" src={Profile} alt="user" />
+          <img className="hidden md:block w-10" src={Profile} alt="user" />
         </div>
       </div>
       <div className="text-faintGray">

@@ -14,6 +14,7 @@ module.exports = {
         primary: " #CE1449",
         secondary: "#EFE4D9",
         lightSecondary: "#FFECF1",
+        silent: "#F5F5F5",
         mute: "#DDDDDD",
         gray: "#626262",
         faintGray: "#99989821",

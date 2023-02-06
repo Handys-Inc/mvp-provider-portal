@@ -1,0 +1,13 @@
+/* Bookings */
+.booking-selector {
+  @apply rounded-full text-xs md:text-sm px-4 py-2 font-medium  cursor-pointer;
+}
+
+/* RESOURCES */
+.resource-card {
+  @apply rounded-xl border border-gray cursor-pointer;
+}
+
+.resource-card img {
+  @apply rounded-tr-xl rounded-tl-xl;
+}
