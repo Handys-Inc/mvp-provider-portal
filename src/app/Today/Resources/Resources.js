@@ -40,7 +40,7 @@ function Resources() {
   ];
 
   return (
-    <div className="mb-32">
+    <div className="hidden md:block mb-32">
       <h4 className="text-lg font-semibold mb-5"> Resources and Tips</h4>
 
       {/* Resources and Tips */}

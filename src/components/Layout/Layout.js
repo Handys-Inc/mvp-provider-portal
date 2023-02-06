@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../Header/Header";
-// import BottomNav from "../BottomNav/BottomNav";
+import BottomNav from "../BottomNav/BottomNav";
 
 function Layout({
   showHeader = true,
@@ -14,7 +14,7 @@ function Layout({
     <div className="h-screen w-full overflow-y-auto">
       {showHeader ? <Header /> : null}
       <div className="px-5 md:px-5">{children}</div>
-      {/* <BottomNav current={current} showBottomNav={showBottomNav} /> */}
+      <BottomNav current={current} showBottomNav={showBottomNav} />
     </div>
   );
 }

@@ -11,7 +11,7 @@ function HelpLinks() {
         <div className="border border-faintGray rounded-xl shadow-xl p-5 flex gap-4">
           <img src={support} alt="support" />
           <div>
-            <h5 className="text-lg font-bold">
+            <h5 className="text-base md:text-lg font-bold">
               Get express access to our support team to assist you
             </h5>
             <p className="font-light text-sm">
