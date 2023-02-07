@@ -77,16 +77,23 @@ function BottomNav({ showBottomNav, current }) {
         </div>
       </NavLink>
       {/* MENU */}{" "}
-      <div className="flex flex-col items-center">
-        <Menu fill={path === "menu" ? active : mute} size={22} />
-        <p
-          className={`${
-            path === "cursor-context-menu" ? "text-primary" : "text-gray"
-          } mt-2`}
-        >
-          Menu
-        </p>
-      </div>
+      <NavLink to="/menu">
+        <div className="flex flex-col items-center">
+          <Menu
+            fill={path === "menu" || current === "menu" ? active : mute}
+            size={22}
+          />
+          <p
+            className={`${
+              path === "menu" || current === "menu"
+                ? "text-primary"
+                : "text-gray"
+            } mt-2`}
+          >
+            Menu
+          </p>
+        </div>
+      </NavLink>
     </div>
   );
 }

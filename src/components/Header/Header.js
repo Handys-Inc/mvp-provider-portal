@@ -30,9 +30,9 @@ function Header() {
 
   return (
     <div className="block z-30">
-      <div className="flex flex-row justify-between items-center px-5 pt-5 pb-3">
+      <div className="flex flex-row justify-between items-center px-5 pt-5 pb-0 md:pb-3">
         <NavLink to="/">
-          <img className="w-20 md:w-28" src={logo} alt="Logo" />
+          <img className="hidden md:blockw-20 md:w-28" src={logo} alt="Logo" />
         </NavLink>
 
         {/* Links */}
@@ -50,7 +50,7 @@ function Header() {
         <div className="flex items-center gap-2">
           <a
             className="hidden md:block"
-            href="https://service-handys.netlify.app/"
+            href="https://customer-handys.netlify.app/"
           >
             <p>Switch to customer portal</p>
           </a>
@@ -89,7 +89,7 @@ function Header() {
           <img className="hidden md:block w-10" src={Profile} alt="user" />
         </div>
       </div>
-      <div className="text-faintGray">
+      <div className="text-faintGray hidden md:block">
         <hr />
       </div>
     </div>

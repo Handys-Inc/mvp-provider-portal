@@ -15,7 +15,7 @@ function Transactions() {
 
   return (
     <Layout>
-      <div className="max-w-3xl my-10 mx-auto">
+      <div className="max-w-3xl my-10 mb-48 mx-auto">
         {/* Prompt to add payout method */}
         <div className="border border-faintGray rounded-xl shadow-lg p-5 flex gap-5">
           <div>
@@ -40,7 +40,7 @@ function Transactions() {
         <div className="flex-1 min-h-fit md:min-h-[20rem]">
           <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
             <div class="border-b border-mute">
-              <Tab.List class="flex flex-wrap  -mb-px ">
+              <Tab.List class="flex overflow-x-auto flex-wrap -mb-px ">
                 <Tab as={Fragment}>
                   {({ selected }) => (
                     <button

@@ -8,6 +8,9 @@ import Today from "./app/Today/Today";
 import NotFound from "./app/NotFound/NotFound";
 import Perks from "./app/Perks/Perks";
 import Transactions from "./app/Transactions/Transactions";
+import Menu from "./app/Menu/Menu";
+import MobileHelp from "./app/Menu/MobileHelp/MobileHelp";
+import MobileResources from "./app/Menu/MobileResources/MobileResources";
 
 function App() {
   return (
@@ -17,6 +20,9 @@ function App() {
         <Route path="/" exact element={<Today />} />
         <Route path="/perks" exact element={<Perks />} />
         <Route path="/transactions" exact element={<Transactions />} />
+        <Route path="/menu" exact element={<Menu />} />
+        <Route path="/m/help" exact element={<MobileHelp />} />
+        <Route path="/m/resources" exact element={<MobileResources />} />
 
         {/* PAGE NOT FOUND */}
         <Route path="*" exact element={<NotFound />} />
