@@ -7,6 +7,7 @@ import Today from "./app/Today/Today";
 // notfound
 import NotFound from "./app/NotFound/NotFound";
 import Perks from "./app/Perks/Perks";
+import Transactions from "./app/Transactions/Transactions";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         {/*General Routes */}
         <Route path="/" exact element={<Today />} />
         <Route path="/perks" exact element={<Perks />} />
+        <Route path="/transactions" exact element={<Transactions />} />
 
         {/* PAGE NOT FOUND */}
         <Route path="*" exact element={<NotFound />} />

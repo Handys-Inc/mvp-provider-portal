@@ -113,6 +113,10 @@ input[type="number"] {
   @apply text-white bg-none border rounded-full font-semibold  border-white px-5 md:px-8 py-2 md:py-3 text-sm md:text-base;
 }
 
+.btn-dark-outline {
+  @apply text-gray bg-none border rounded-full font-semibold  border-gray  px-7  py-2  text-sm;
+}
+
 /* Form Styles */
 .form-input {
   @apply w-full border border-mute rounded-md px-5 py-3;
@@ -133,4 +137,15 @@ input[type="radio"] {
 }
 .message-pill {
   @apply rounded-full bg-faintGray text-xs text-gray py-1 px-4 inline-block;
+}
+
+/* tabs */
+/* tabs */
+
+.tab-active {
+  @apply inline-flex mr-4 py-4 text-black border-b-2 border-gray focus:outline-none;
+}
+
+.tab-inactive {
+  @apply inline-flex mr-4 py-4 text-gray border-b-2 border-none;
 }

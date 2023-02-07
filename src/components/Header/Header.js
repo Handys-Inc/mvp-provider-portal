@@ -12,7 +12,7 @@ import Profile from "../../assets/images/profile.png";
 
 import Bell from "../../assets/custom-svgs/Bell";
 
-import Notifications from "../../app/Notifcations/Notifications";
+import Notifications from "../Notifcations/Notifications";
 
 import "./index.css";
 
@@ -24,7 +24,7 @@ function Header() {
     { href: "/", label: "Today" },
     { href: "/inbox", label: "Inbox" },
     { href: "/calendar", label: "Calendar" },
-    { href: "/transaction-history", label: "Transaction history" },
+    { href: "/transactions", label: "Transaction history" },
     { href: "/perks", label: "Perks" },
   ];
 
