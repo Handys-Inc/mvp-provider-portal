@@ -34,7 +34,6 @@ function BottomNav({ showBottomNav, current }) {
           </p>
         </div>
       </NavLink>
-
       {/* Inbox */}
       <NavLink to="/inbox">
         {" "}
@@ -49,7 +48,6 @@ function BottomNav({ showBottomNav, current }) {
           </p>
         </div>
       </NavLink>
-
       {/* CALENDER */}
       <NavLink to="/calendar">
         {" "}
@@ -64,42 +62,38 @@ function BottomNav({ showBottomNav, current }) {
           </p>
         </div>
       </NavLink>
-
       {/* EARNINGS */}
-      <NavLink to="/transaction-history">
+      <NavLink to="/transactions">
         {" "}
         <div className="flex flex-col items-center">
-          <Coins
-            fill={path === "transaction-history" ? active : mute}
-            size={22}
-          />
+          <Coins fill={path === "transactions" ? active : mute} size={22} />
           <p
             className={`${
-              path === "transaction-history" ? "text-primary" : "text-gray"
+              path === "transactions" ? "text-primary" : "text-gray"
             } mt-2`}
           >
             Earnings
           </p>
         </div>
       </NavLink>
-
-      {/* MENU */}
-    
-        {" "}
+      {/* MENU */}{" "}
+      <NavLink to="/menu">
         <div className="flex flex-col items-center">
           <Menu
-            fill={path === "menu" ? active : mute}
+            fill={path === "menu" || current === "menu" ? active : mute}
             size={22}
           />
           <p
             className={`${
-              path === "cursor-context-menu" ? "text-primary" : "text-gray"
+              path === "menu" || current === "menu"
+                ? "text-primary"
+                : "text-gray"
             } mt-2`}
           >
-           Menu
+            Menu
           </p>
         </div>
-
+      </NavLink>
     </div>
   );
 }
