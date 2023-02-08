@@ -4,14 +4,16 @@ import Selector from "./components/Selector";
 import MessageView from "./components/MessageView";
 import DetailsPane from "./components/DetailsPane";
 import Layout from "../../components/Layout/Layout";
-// import MobileInbox from "./Mobile/MobileInbox";
+import MobileInbox from "./Mobile/MobileInbox";
 
 function Messages() {
   const [details, setDetails] = useState(true);
   return (
-    <Layout>
+    <Layout current="inbox">
       {/* Mobile Screens */}
-      <div className="block md:hidden">{/* <MobileInbox /> */}</div>
+      <div className="block md:hidden">
+        <MobileInbox />
+        </div>
 
       {/* Desktop */}
       {/* Selector Pane */}
