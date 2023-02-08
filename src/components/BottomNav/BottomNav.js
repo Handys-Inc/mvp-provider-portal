@@ -38,10 +38,15 @@ function BottomNav({ showBottomNav, current }) {
       <NavLink to="/inbox">
         {" "}
         <div className="flex flex-col items-center">
-          <Inbox fill={path === "messages" ? active : mute} size={22} />
+          <Inbox
+            fill={path === "inbox" || current === "inbox" ? active : mute}
+            size={22}
+          />
           <p
             className={`${
-              path === "messages" ? "text-primary" : "text-gray"
+              path === "inbox" || current === "inbox"
+                ? "text-primary"
+                : "text-gray"
             } mt-2`}
           >
             Inbox
