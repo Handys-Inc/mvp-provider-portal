@@ -263,7 +263,7 @@ export default function View({ view, currentFocus }) {
       ) : (
         // SHOWING PER YEAR
         <div className="w-full">
-          <div className="grid grid-cols-4 gap-10 ">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 ">
             {/* Loop over months in year */}
             {years.map((month) => {
               // TODO: GET ACTUAL DAYS IN THE MONTH

@@ -59,7 +59,7 @@ function CalendarHeader({ view, setView, currentFocus, setCurrentFocus }) {
 
             <button
               onClick={() => setAvailabilityView(true)}
-              className="btn-primary"
+              className="hidden md:block btn-primary"
             >
               Set availability
             </button>
