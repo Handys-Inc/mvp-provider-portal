@@ -3,15 +3,25 @@ import Layout from "../../components/Layout/Layout";
 import CalendarHeader from "./components/CalendarHeader";
 import View from "./components/View";
 
+import { startOfToday, format } from "date-fns";
+
 function Calendar() {
   const [view, setView] = useState("monthly");
+  const [currentFocus, setCurrentFocus] = useState(
+    format(startOfToday(), "MMM-yyyy")
+  );
 
   return (
     <Layout>
-      <CalendarHeader view={view} setView={setView} />
+      <CalendarHeader
+        currentFocus={currentFocus}
+        setCurrentFocus={setCurrentFocus}
+        view={view}
+        setView={setView}
+      />
 
       {/* Calendar here */}
-      <View view={view} />
+      <View currentFocus={currentFocus} view={view} />
     </Layout>
   );
 }

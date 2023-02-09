@@ -82,15 +82,15 @@ const years = [
   { month: "December" },
 ];
 
-export default function View({ view }) {
+export default function View({ view, currentFocus }) {
   let today = startOfToday();
   // Selected day
   let [selectedDay, setSelectedDay] = useState(today);
 
-  let [currentMonth, setCurrentMonth] = useState(format(today, "MMM-yyyy"));
+  let [currentMonth, setCurrentMonth] = useState(currentFocus);
 
   // Current Day month
-  let firstDayCurrentMonth = parse(currentMonth, "MMM-yyyy", new Date());
+  let firstDayCurrentMonth = parse(currentFocus, "MMM-yyyy", new Date());
 
   let days = eachDayOfInterval({
     start: startOfWeek(firstDayCurrentMonth),
@@ -123,10 +123,10 @@ export default function View({ view }) {
           <div className="md:grid md:grid-cols-1 md:divide-x md:divide-gray-200">
             <div className="md:pr-14">
               <div className="flex items-center">
-                <h2 className="flex-auto font-semibold text-gray-900">
+                {/* <h2 className="flex-auto font-semibold text-gray-900">
                   {format(firstDayCurrentMonth, "MMMM yyyy")}
-                </h2>
-                <button
+                </h2> */}
+                {/* <button
                   type="button"
                   onClick={previousMonth}
                   className="-my-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500"
@@ -141,7 +141,7 @@ export default function View({ view }) {
                 >
                   <span className="sr-only">Next month</span>
                   <ChevronRightIcon className="w-5 h-5" aria-hidden="true" />
-                </button>
+                </button> */}
               </div>
               <div className="grid grid-cols-7 mt-10 text-sm md:text-base leading-6 text-right mr-3 text-gray-500">
                 <div className="text-primary">SUN</div>
