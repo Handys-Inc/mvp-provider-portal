@@ -3,8 +3,6 @@ import { Fragment, useEffect } from "react";
 
 import { GrClose } from "react-icons/gr";
 
-import { MdArrowBack } from "react-icons/md";
-
 export default function Modal({
   isOpen,
   back = false,

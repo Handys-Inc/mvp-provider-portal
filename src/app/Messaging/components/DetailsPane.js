@@ -3,10 +3,13 @@ import Border from "../../../components/Border/Border";
 
 import profile from "../../../assets/sample/jane.png";
 
-function DetailsPane() {
+function DetailsPane({ showHeader = true, details }) {
   return (
     <div>
-      <h3 className="font-semibold text-lg my-4 px-10">Job Details</h3>
+      {showHeader && (
+        <h3 className="font-semibold text-lg my-4 px-10">Job Details</h3>
+      )}
+
       <div className="flex justify-between px-10 my-5">
         <div className="text-left">
           <h3 className="text-base">Customer Info</h3>

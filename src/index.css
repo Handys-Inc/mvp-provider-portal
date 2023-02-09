@@ -140,7 +140,6 @@ input[type="radio"] {
 }
 
 /* tabs */
-/* tabs */
 
 .tab-active {
   @apply inline-flex mr-4 py-4 text-black border-b-2 border-gray focus:outline-none;

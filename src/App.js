@@ -12,6 +12,7 @@ import Menu from "./app/Menu/Menu";
 import MobileHelp from "./app/Menu/MobileHelp/MobileHelp";
 import MobileResources from "./app/Menu/MobileResources/MobileResources";
 import Messages from "./app/Messaging/Messages";
+import Calendar from "./app/Calendar/Calendar";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/perks" exact element={<Perks />} />
         <Route path="/transactions" exact element={<Transactions />} />
         <Route path="/inbox" exact element={<Messages />} />
+        <Route path="/calendar" exact element={<Calendar />} />
 
         {/* mobile specific */}
         <Route path="/menu" exact element={<Menu />} />
