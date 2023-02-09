@@ -18,12 +18,17 @@ import {
   startOfToday,
   startOfWeek,
 } from "date-fns";
+
+import Modal from "./CalModal";
+import ViewJob from "./ViewJob";
+
 import { Fragment, useState } from "react";
 
 const meetings = [
   {
     id: 1,
-    name: "Leslie Alexander",
+    name: "Leslie",
+    work: "Cleaning",
     imageUrl:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
     startDatetime: "2023-02-11T13:00",
@@ -31,7 +36,17 @@ const meetings = [
   },
   {
     id: 2,
-    name: "Michael Foster",
+    name: "Michael",
+    work: "Painting",
+    imageUrl:
+      "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    startDatetime: "2023-02-14T09:00",
+    endDatetime: "2023-02-20T11:30",
+  },
+  {
+    id: 2,
+    name: "Stephen",
+    work: "Washing",
     imageUrl:
       "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
     startDatetime: "2023-02-14T09:00",
@@ -39,7 +54,8 @@ const meetings = [
   },
   {
     id: 3,
-    name: "Dries Vincent",
+    name: "Forson",
+    work: "Plumbing",
     imageUrl:
       "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
     startDatetime: "2023-02-28T17:00",
@@ -51,7 +67,22 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function View() {
+const years = [
+  { month: "January" },
+  { month: "February" },
+  { month: "March" },
+  { month: "April" },
+  { month: "May" },
+  { month: "June" },
+  { month: "July" },
+  { month: "August" },
+  { month: "September" },
+  { month: "October" },
+  { month: "November" },
+  { month: "December" },
+];
+
+export default function View({ view }) {
   let today = startOfToday();
   // Selected day
   let [selectedDay, setSelectedDay] = useState(today);
@@ -76,109 +107,141 @@ export default function View() {
     setCurrentMonth(format(firstDayNextMonth, "MMM-yyyy"));
   }
 
-  let selectedDayMeetings = meetings.filter((meeting) =>
-    isSameDay(parseISO(meeting.startDatetime), selectedDay)
-  );
+  // let selectedDayMeetings = meetings.filter((meeting) =>
+  //   isSameDay(parseISO(meeting.startDatetime), selectedDay)
+  // );
+
+  // modal controlling job view
+  const [showJob, setShowJob] = useState(false);
+  const [selectedJob, setSelectedJob] = useState({});
 
   return (
     <div className="mb-20">
-      <div className="w-full">
-        <div className="md:grid md:grid-cols-1 md:divide-x md:divide-gray-200">
-          <div className="md:pr-14">
-            <div className="flex items-center">
-              <h2 className="flex-auto font-semibold text-gray-900">
-                {format(firstDayCurrentMonth, "MMMM yyyy")}
-              </h2>
-              <button
-                type="button"
-                onClick={previousMonth}
-                className="-my-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500"
-              >
-                <span className="sr-only">Previous month</span>
-                <ChevronLeftIcon className="w-5 h-5" aria-hidden="true" />
-              </button>
-              <button
-                onClick={nextMonth}
-                type="button"
-                className="-my-1.5 -mr-1.5 ml-2 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500"
-              >
-                <span className="sr-only">Next month</span>
-                <ChevronRightIcon className="w-5 h-5" aria-hidden="true" />
-              </button>
-            </div>
-            <div className="grid grid-cols-7 mt-10 text-sm md:text-base leading-6 text-right mr-3 text-gray-500">
-              <div className="text-primary">SUN</div>
-              <div>MON</div>
-              <div>TUE</div>
-              <div>WED</div>
-              <div>THU</div>
-              <div>FRI</div>
-              <div className="text-primary">SAT</div>
-            </div>
-            {/* Showing Dates */}
-            <div className="grid grid-cols-7 mt-2 text-sm">
-              {days.map((day, dayIdx) => (
-                <div
-                  key={day.toString()}
-                  className={classNames(
-                    dayIdx === 0 && colStartClasses[getDay(day)],
-                    "pb-10 md:pb-16 border  border-faintGray"
-                  )}
+      {view === "monthly" ? (
+        // SHOWING PER MONTH
+        <div className="w-full">
+          <div className="md:grid md:grid-cols-1 md:divide-x md:divide-gray-200">
+            <div className="md:pr-14">
+              <div className="flex items-center">
+                <h2 className="flex-auto font-semibold text-gray-900">
+                  {format(firstDayCurrentMonth, "MMMM yyyy")}
+                </h2>
+                <button
+                  type="button"
+                  onClick={previousMonth}
+                  className="-my-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500"
                 >
-                  <button
-                    type="button"
-                    onClick={() => setSelectedDay(day)}
+                  <span className="sr-only">Previous month</span>
+                  <ChevronLeftIcon className="w-5 h-5" aria-hidden="true" />
+                </button>
+                <button
+                  onClick={nextMonth}
+                  type="button"
+                  className="-my-1.5 -mr-1.5 ml-2 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500"
+                >
+                  <span className="sr-only">Next month</span>
+                  <ChevronRightIcon className="w-5 h-5" aria-hidden="true" />
+                </button>
+              </div>
+              <div className="grid grid-cols-7 mt-10 text-sm md:text-base leading-6 text-right mr-3 text-gray-500">
+                <div className="text-primary">SUN</div>
+                <div>MON</div>
+                <div>TUE</div>
+                <div>WED</div>
+                <div>THU</div>
+                <div>FRI</div>
+                <div className="text-primary">SAT</div>
+              </div>
+              {/* Showing Dates */}
+              <div className="grid grid-cols-7 mt-2 text-sm">
+                {days.map((day, dayIdx) => (
+                  <div
+                    key={day.toString()}
                     className={classNames(
-                      isEqual(day, selectedDay) && "text-primary",
-                      !isEqual(day, selectedDay) &&
-                        isToday(day) &&
-                        "text-primary",
-                      !isEqual(day, selectedDay) &&
-                        !isToday(day) &&
-                        isSameMonth(day, firstDayCurrentMonth) &&
-                        "text-black",
-                      !isEqual(day, selectedDay) &&
-                        !isToday(day) &&
-                        !isSameMonth(day, firstDayCurrentMonth) &&
-                        "text-black text-opacity-30",
-                      isEqual(day, selectedDay) &&
-                        isToday(day) &&
-                        "font-bold text-primary border border-primary",
-                      isEqual(day, selectedDay) &&
-                        !isToday(day) &&
-                        "bg-gray-900",
-                      !isEqual(day, selectedDay) && "hover:bg-faintGray",
-                      (isEqual(day, selectedDay) || isToday(day)) &&
-                        "font-semibold",
-                      "flex rounded-full w-full h-full justify-end pr-3 pt-3"
+                      dayIdx === 0 && colStartClasses[getDay(day)],
+                      "h-[5vh] md:min-h-[20vh] md:border  border-faintGray "
                     )}
                   >
-                    {/* mx-auto flex h-8 w-8 items-center justify-center
+                    <button
+                      type="button"
+                      onClick={() => setSelectedDay(day)}
+                      className={classNames(
+                        isEqual(day, selectedDay) && "text-primary",
+                        !isEqual(day, selectedDay) &&
+                          isToday(day) &&
+                          "text-primary",
+                        !isEqual(day, selectedDay) &&
+                          !isToday(day) &&
+                          isSameMonth(day, firstDayCurrentMonth) &&
+                          "text-black",
+                        !isEqual(day, selectedDay) &&
+                          !isToday(day) &&
+                          !isSameMonth(day, firstDayCurrentMonth) &&
+                          "text-black text-opacity-30",
+                        isEqual(day, selectedDay) &&
+                          isToday(day) &&
+                          "font-bold text-primary",
+                        isEqual(day, selectedDay) &&
+                          !isToday(day) &&
+                          "bg-gray-900",
+                        !isEqual(day, selectedDay) && "",
+                        (isEqual(day, selectedDay) || isToday(day)) &&
+                          "font-semibold",
+                        "flex w-full h-1/3 justify-end pr-3 pt-3"
+                      )}
+                    >
+                      {/* mx-auto flex h-8 w-8 items-center justify-center
                     rounded-full */}
-                    <time dateTime={format(day, "yyyy-MM-dd")}>
-                      {format(day, "d")}
-                    </time>
-                  </button>
+                      <time dateTime={format(day, "yyyy-MM-dd")}>
+                        {format(day, "d")}
+                      </time>
+                    </button>
 
-                  {/* Meeting information */}
-                  <div className="w-1 h-1 mx-auto mt-1">
-                    {meetings.some((meeting) => {
-                      console.log("meeting", meeting);
+                    {/* Meeting information */}
+                    <div className="hidden md:block mx-4 -mt-4 h-full">
+                      {meetings
+                        .filter((meeting) =>
+                          isSameDay(parseISO(meeting.startDatetime), day)
+                        )
+                        .map((single, index) => {
+                          return (
+                            <Fragment>
+                              <div
+                                onClick={() => {
+                                  setSelectedJob(single);
+                                  setShowJob(true);
+                                }}
+                                key={index}
+                                className="w-full text-white my-2 cursor-pointer font-semibold text-xs items-center flex gap-2 bg-green-500 p-2 rounded-full"
+                              >
+                                <img
+                                  className="w-5 h-5 rounded-full"
+                                  src={single.imageUrl}
+                                  alt="appointment"
+                                />
+                                <div>
+                                  {single.name} - {single.work}
+                                </div>
+                              </div>
 
-                      if (isSameDay(parseISO(meeting.startDatetime), day)) {
-                        return (
-                          <div className="rounded-full w-full bg-green-500 p-2">
-                            <img src={meeting.imageUrl} alt="job" />
-                          </div>
-                        );
-                      }
-                    })}
+                              {/* MODAL */}
+                              <Modal
+                                title="Job Details"
+                                full={true}
+                                isOpen={showJob}
+                                setIsOpen={setShowJob}
+                              >
+                                <ViewJob details={selectedJob} />
+                              </Modal>
+                            </Fragment>
+                          );
+                        })}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-          {/* <section className="mt-12 md:mt-0 md:pl-14">
+            {/* <section className="mt-12 md:mt-0 md:pl-14">
             <h2 className="font-semibold text-gray-900">
               Schedule for{" "}
               <time dateTime={format(selectedDay, "yyyy-MM-dd")}>
@@ -195,8 +258,77 @@ export default function View() {
               )}
             </ol>
           </section> */}
+          </div>
         </div>
-      </div>
+      ) : (
+        // SHOWING PER YEAR
+        <div className="w-full">
+          <div className="grid grid-cols-4 gap-10 ">
+            {/* Loop over months in year */}
+            {years.map((month) => {
+              // TODO: GET ACTUAL DAYS IN THE MONTH
+              return (
+                <div>
+                  <h3 className="text-primary">{month.month.toUpperCase()}</h3>
+                  <div className="grid grid-cols-7 mt-10 text-xs leading-6 text-right mr-3 text-gray-500">
+                    <div className="text-primary">SUN</div>
+                    <div>MON</div>
+                    <div>TUE</div>
+                    <div>WED</div>
+                    <div>THU</div>
+                    <div>FRI</div>
+                    <div className="text-primary">SAT</div>
+                  </div>
+                  <div className="grid grid-cols-7 mt-2 text-sm">
+                    {days.map((day, dayIdx) => (
+                      <div
+                        key={day.toString()}
+                        className={classNames(
+                          dayIdx === 0 && colStartClasses[getDay(day)],
+                          ""
+                        )}
+                      >
+                        <button
+                          type="button"
+                          onClick={() => setSelectedDay(day)}
+                          className={classNames(
+                            isEqual(day, selectedDay) && "text-primary",
+                            !isEqual(day, selectedDay) &&
+                              isToday(day) &&
+                              "text-primary",
+                            !isEqual(day, selectedDay) &&
+                              !isToday(day) &&
+                              isSameMonth(day, firstDayCurrentMonth) &&
+                              "text-black",
+                            !isEqual(day, selectedDay) &&
+                              !isToday(day) &&
+                              !isSameMonth(day, firstDayCurrentMonth) &&
+                              "text-black text-opacity-30",
+                            isEqual(day, selectedDay) &&
+                              isToday(day) &&
+                              "font-bold text-primary",
+                            isEqual(day, selectedDay) &&
+                              !isToday(day) &&
+                              "bg-gray-900",
+                            !isEqual(day, selectedDay) && "",
+                            (isEqual(day, selectedDay) || isToday(day)) &&
+                              "font-semibold",
+                            "flex w-full h-1/3 justify-end pr-3 pt-3"
+                          )}
+                        >
+                          <time dateTime={format(day, "yyyy-MM-dd")}>
+                            {format(day, "d")}
+                          </time>
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

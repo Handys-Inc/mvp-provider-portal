@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../../components/Layout/Layout";
 import CalendarHeader from "./components/CalendarHeader";
 import View from "./components/View";
 
 function Calendar() {
+  const [view, setView] = useState("monthly");
+
   return (
     <Layout>
-      <CalendarHeader />
+      <CalendarHeader view={view} setView={setView} />
 
       {/* Calendar here */}
-      <View />
+      <View view={view} />
     </Layout>
   );
 }
