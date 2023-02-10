@@ -17,7 +17,7 @@ function Chat({ details }) {
             <h3 className="font-semibold text-base">
               {details.name} <span className="text-xs text-gray">6:55pm</span>
             </h3>
-            <p className="text-gray text-sm font-light mt-2">
+            <p className="text-gray text-base font-light">
               {details.lastMessage}
             </p>
           </div>
