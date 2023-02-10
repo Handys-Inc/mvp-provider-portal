@@ -1,0 +1,3 @@
+.tab-scroll-none::-webkit-scrollbar {
+  display: none;
+}

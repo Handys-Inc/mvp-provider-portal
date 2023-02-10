@@ -13,7 +13,7 @@ function Messages() {
       {/* Mobile Screens */}
       <div className="block md:hidden">
         <MobileInbox />
-        </div>
+      </div>
 
       {/* Desktop */}
       {/* Selector Pane */}
@@ -21,7 +21,7 @@ function Messages() {
         <div className="w-[22rem] border-r border-r-faintGray">
           <Selector />
         </div>
-        <div className="flex flex-1">
+        <div className="flex h-[88vh] flex-1">
           <div
             className={`${
               details ? "w-2/3 border-r border-r-faintGray" : "w-full"

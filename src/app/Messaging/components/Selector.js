@@ -2,9 +2,9 @@ import React from "react";
 import RawBorder from "../../../components/Border/RawBorder";
 
 import profile from "../../../assets/images/profile.png";
-import john from '../../../assets/sample/john.png'
-import jane from '../../../assets/sample/jane.png'
-import shiela from '../../../assets/sample/shiela.png'
+import john from "../../../assets/sample/john.png";
+import jane from "../../../assets/sample/jane.png";
+import shiela from "../../../assets/sample/shiela.png";
 
 function Selector() {
   return (
@@ -17,9 +17,9 @@ function Selector() {
       <RawBorder />
 
       {/* Message selected */}
-      <div className="flex gap-5 p-3cursor-pointer mb-5 rounded-2xl m-1 mt-4">
+      <div className="flex gap-5 items-center  p-3 cursor-pointer mb-5 rounded-2xl m-1 mt-4">
         <div>
-          <img className="w-24" src={john} alt="provider" />
+          <img className="w-16" src={john} alt="provider" />
         </div>
         <div className="text-left">
           <div className="text-gray mt-2 flex text-xs gap-2 items-center">
@@ -33,9 +33,9 @@ function Selector() {
       </div>
       <RawBorder />
       {/* 2 */}
-      <div className="flex gap-5 p-3  cursor-pointer mb-5 rounded-2xl m-1">
+      <div className="flex gap-5 items-center p-3  cursor-pointer mb-5 rounded-2xl m-1">
         <div>
-          <img className="w-24" src={profile} alt="provider" />
+          <img className="w-16" src={profile} alt="provider" />
         </div>
         <div className="text-left">
           <div className="text-gray mt-2 flex text-xs gap-2 items-center">
@@ -49,9 +49,9 @@ function Selector() {
       </div>
       <RawBorder />
       {/* 3 */}
-      <div className="flex gap-5 p-3  cursor-pointer mb-5 rounded-2xl m-1">
+      <div className="flex gap-5 items-center p-3  cursor-pointer mb-5 rounded-2xl m-1">
         <div>
-          <img className="w-24" src={shiela} alt="provider" />
+          <img className="w-16" src={shiela} alt="provider" />
         </div>
         <div className="text-left">
           <div className="text-gray mt-2 flex text-xs gap-2 items-center">
@@ -65,9 +65,9 @@ function Selector() {
       </div>
       <RawBorder />
       {/* 4 */}
-      <div className="flex gap-5 p-3  cursor-pointer mb-5 rounded-2xl m-1">
+      <div className="flex gap-5 items-center p-3  cursor-pointer mb-5 rounded-2xl m-1">
         <div>
-          <img className="w-24" src={jane} alt="provider" />
+          <img className="w-16" src={jane} alt="provider" />
         </div>
         <div className="text-left">
           <div className="text-gray mt-2 flex text-xs gap-2 items-center">
@@ -81,9 +81,9 @@ function Selector() {
       </div>
       <RawBorder />
       {/* Message selected */}
-      <div className="flex gap-5 p-3cursor-pointer mb-5 rounded-2xl m-1 mt-4">
+      <div className="flex gap-5 items-center p-3cursor-pointer mb-5 rounded-2xl m-1 mt-4">
         <div>
-          <img className="w-24" src={john} alt="provider" />
+          <img className="w-16" src={john} alt="provider" />
         </div>
         <div className="text-left">
           <div className="text-gray mt-2 flex text-xs gap-2 items-center">
@@ -97,9 +97,9 @@ function Selector() {
       </div>
       <RawBorder />
       {/* 2 */}
-      <div className="flex gap-5 p-3  cursor-pointer mb-5 rounded-2xl m-1">
+      <div className="flex gap-5 items-center p-3  cursor-pointer mb-5 rounded-2xl m-1">
         <div>
-          <img className="w-24" src={profile} alt="provider" />
+          <img className="w-16" src={profile} alt="provider" />
         </div>
         <div className="text-left">
           <div className="text-gray mt-2 flex text-xs gap-2 items-center">
@@ -113,9 +113,9 @@ function Selector() {
       </div>
       <RawBorder />
       {/* 3 */}
-      <div className="flex gap-5 p-3  cursor-pointer mb-5 rounded-2xl m-1">
+      <div className="flex gap-5 items-center p-3  cursor-pointer mb-5 rounded-2xl m-1">
         <div>
-          <img className="w-24" src={shiela} alt="provider" />
+          <img className="w-16" src={shiela} alt="provider" />
         </div>
         <div className="text-left">
           <div className="text-gray mt-2 flex text-xs gap-2 items-center">
@@ -129,9 +129,9 @@ function Selector() {
       </div>
       <RawBorder />
       {/* 4 */}
-      <div className="flex gap-5 p-3  cursor-pointer mb-5 rounded-2xl m-1">
+      <div className="flex gap-5 items-center p-3  cursor-pointer mb-5 rounded-2xl m-1">
         <div>
-          <img className="w-24" src={jane} alt="provider" />
+          <img className="w-16" src={jane} alt="provider" />
         </div>
         <div className="text-left">
           <div className="text-gray mt-2 flex text-xs gap-2 items-center">
