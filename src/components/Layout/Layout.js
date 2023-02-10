@@ -13,7 +13,7 @@ function Layout({
   return (
     <div className="h-screen min-w-full overflow-y-auto">
       {showHeader ? <Header /> : null}
-      <div className="px-3 md:px-5 min-w-full">{children}</div>
+      <div className="px-2 md:px-5 min-w-full">{children}</div>
       <BottomNav current={current} showBottomNav={showBottomNav} />
     </div>
   );

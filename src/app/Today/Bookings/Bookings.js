@@ -9,7 +9,7 @@ function Bookings() {
       <h4 className="text-lg font-semibold mb-4">Your bookings</h4>
 
       {/* Selector */}
-      <div className="booking-scroll-none flex overflow-x-auto space-x-5 w-full">
+      <div className="booking-scroll-none flex overflow-x-auto space-x-3 w-full">
         <div
           onClick={() => setView("upcoming")}
           className={`${

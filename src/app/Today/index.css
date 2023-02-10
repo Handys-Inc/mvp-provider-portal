@@ -1,6 +1,6 @@
 /* Bookings */
 .booking-selector {
-  @apply rounded-full text-sm px-4 py-2 font-medium flex-shrink-0 cursor-pointer;
+  @apply rounded-full text-base px-4 py-2 font-medium flex-shrink-0 cursor-pointer;
 }
 
 /* RESOURCES */
