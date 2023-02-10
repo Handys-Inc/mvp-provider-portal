@@ -1,0 +1,11 @@
+.list-card {
+  @apply flex justify-between cursor-pointer hover:border-primary mb-4 items-center w-10/12 mx-auto py-5 px-5 border border-faintGray rounded-lg;
+}
+
+.list-card-icon {
+  @apply w-10 h-10 text-primary flex items-center justify-center rounded-full bg-primary bg-opacity-30;
+}
+
+.list-card h4 {
+  @apply text-lg font-bold;
+}

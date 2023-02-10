@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 
 // TODO: Remove Sample image
-import lady from "../../../../assets/sample/lady.png";
+import lady from "../../../../assets/sample/work.png";
 
 import Modal from "../../../../components/Modal/Modal";
 
