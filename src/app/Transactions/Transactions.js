@@ -10,6 +10,8 @@ import Gross from "./Gross/Gross";
 import Upcoming from "./Upcoming/Upcoming";
 import Completed from "./Completed/Completed";
 
+import './index.css'
+
 function Transactions() {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -37,11 +39,11 @@ function Transactions() {
         <h3 className="font-semibold text-2xl mt-10 mb-5">
           Transaction history
         </h3>
-        <div className="flex-1 min-h-fit md:min-h-[20rem]">
+        <div className="flex-1 min-w-full">
           <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
             <div class="border-b border-mute">
-              <Tab.List class="flex overflow-x-auto flex-wrap -mb-px ">
-                <Tab as={Fragment}>
+              <Tab.List class="flex tab-scroll-none  overflow-x-auto space-x-5  flex-nowrap -mb-px">
+                <Tab className="flex-shrink-0" as={Fragment}>
                   {({ selected }) => (
                     <button
                       className={selected ? "tab-active" : "tab-inactive"}
@@ -50,7 +52,7 @@ function Transactions() {
                     </button>
                   )}
                 </Tab>
-                <Tab as={Fragment}>
+                <Tab className="flex-shrink-0" as={Fragment}>
                   {({ selected }) => (
                     <button
                       className={selected ? "tab-active" : "tab-inactive"}
@@ -59,7 +61,7 @@ function Transactions() {
                     </button>
                   )}
                 </Tab>
-                <Tab as={Fragment}>
+                <Tab className="flex-shrink-0" as={Fragment}>
                   {({ selected }) => (
                     <button
                       className={selected ? "tab-active" : "tab-inactive"}
