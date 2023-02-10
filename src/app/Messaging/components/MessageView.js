@@ -34,10 +34,114 @@ function MessageView({ setDetails, details }) {
       <RawBorder />
 
       {/* Actual Messages */}
-      <div className="w-full text-center mt-5">
+      <div className=" h-[68vh] overflow-y-scroll w-full text-center mt-5">
         <p>January 13</p>
 
         {/* Message Item */}
+        <div className="flex gap-3 justify-start px-10 my-5">
+          <div className="">
+            <img className="w-14" src={profile} alt="provider" />
+          </div>
+          <div className="text-left w-3/5">
+            <h3 className="font-semibold text-base">
+              Jane <span className="text-xs text-gray">6:55pm</span>
+            </h3>
+            <p className="text-gray text-sm font-light mt-2">
+              Hello, I’d like to book your services for a few hours
+            </p>
+          </div>
+        </div>
+        <div className="flex gap-3 justify-start px-10 my-5">
+          <div className="">
+            <img className="w-14" src={profile} alt="provider" />
+          </div>
+          <div className="text-left w-3/5">
+            <h3 className="font-semibold text-base">
+              Jane <span className="text-xs text-gray">6:55pm</span>
+            </h3>
+            <p className="text-gray text-sm font-light mt-2">
+              Hello, I’d like to book your services for a few hours
+            </p>
+          </div>
+        </div>
+        <div className="flex gap-3 justify-start px-10 my-5">
+          <div className="">
+            <img className="w-14" src={profile} alt="provider" />
+          </div>
+          <div className="text-left w-3/5">
+            <h3 className="font-semibold text-base">
+              Jane <span className="text-xs text-gray">6:55pm</span>
+            </h3>
+            <p className="text-gray text-sm font-light mt-2">
+              Hello, I’d like to book your services for a few hours
+            </p>
+          </div>
+        </div>
+        <div className="flex gap-3 justify-start px-10 my-5">
+          <div className="">
+            <img className="w-14" src={profile} alt="provider" />
+          </div>
+          <div className="text-left w-3/5">
+            <h3 className="font-semibold text-base">
+              Jane <span className="text-xs text-gray">6:55pm</span>
+            </h3>
+            <p className="text-gray text-sm font-light mt-2">
+              Hello, I’d like to book your services for a few hours
+            </p>
+          </div>
+        </div>
+        <div className="flex gap-3 justify-start px-10 my-5">
+          <div className="">
+            <img className="w-14" src={profile} alt="provider" />
+          </div>
+          <div className="text-left w-3/5">
+            <h3 className="font-semibold text-base">
+              Jane <span className="text-xs text-gray">6:55pm</span>
+            </h3>
+            <p className="text-gray text-sm font-light mt-2">
+              Hello, I’d like to book your services for a few hours
+            </p>
+          </div>
+        </div>
+        <div className="flex gap-3 justify-start px-10 my-5">
+          <div className="">
+            <img className="w-14" src={profile} alt="provider" />
+          </div>
+          <div className="text-left w-3/5">
+            <h3 className="font-semibold text-base">
+              Jane <span className="text-xs text-gray">6:55pm</span>
+            </h3>
+            <p className="text-gray text-sm font-light mt-2">
+              Hello, I’d like to book your services for a few hours
+            </p>
+          </div>
+        </div>
+        <div className="flex gap-3 justify-start px-10 my-5">
+          <div className="">
+            <img className="w-14" src={profile} alt="provider" />
+          </div>
+          <div className="text-left w-3/5">
+            <h3 className="font-semibold text-base">
+              Jane <span className="text-xs text-gray">6:55pm</span>
+            </h3>
+            <p className="text-gray text-sm font-light mt-2">
+              Hello, I’d like to book your services for a few hours
+            </p>
+          </div>
+        </div>
+        <div className="flex gap-3 justify-start px-10 my-5">
+          <div className="">
+            <img className="w-14" src={profile} alt="provider" />
+          </div>
+          <div className="text-left w-3/5">
+            <h3 className="font-semibold text-base">
+              Jane <span className="text-xs text-gray">6:55pm</span>
+            </h3>
+            <p className="text-gray text-sm font-light mt-2">
+              Hello, I’d like to book your services for a few hours
+            </p>
+          </div>
+        </div>
         <div className="flex gap-3 justify-start px-10 my-5">
           <div className="">
             <img className="w-14" src={profile} alt="provider" />
