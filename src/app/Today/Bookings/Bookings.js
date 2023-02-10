@@ -9,9 +9,9 @@ function Bookings() {
       <h4 className="text-lg font-semibold mb-4">Your bookings</h4>
 
       {/* Selector */}
-      <div className="flex gap-3">
+      <div className="booking-scroll-none flex overflow-x-auto space-x-5 w-full">
         <div
-            onClick={() => setView("upcoming")}
+          onClick={() => setView("upcoming")}
           className={`${
             view === "upcoming"
               ? " bg-primary text-primary bg-opacity-20"
@@ -21,7 +21,7 @@ function Bookings() {
           Upcoming (0)
         </div>
         <div
-        onClick={() => setView("pending")}
+          onClick={() => setView("pending")}
           className={`${
             view === "pending"
               ? " bg-primary text-primary bg-opacity-20"
@@ -31,7 +31,7 @@ function Bookings() {
           Pending Offers (0)
         </div>
         <div
-            onClick={() => setView("completed")}
+          onClick={() => setView("completed")}
           className={`${
             view === "completed"
               ? " bg-primary text-primary bg-opacity-20"

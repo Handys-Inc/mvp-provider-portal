@@ -82,15 +82,17 @@ function MobileInbox() {
           <Fragment>
             <div
               onClick={() => setShow(true)}
-              className="flex gap-5 cursor-pointer rounded-2xl"
+              className="flex gap-5 items-center cursor-pointer rounded-2xl"
             >
               <div>
                 <img className="w-12" src={single.img} alt="provider" />
               </div>
               <div className="text-left">
-                <div className="text-gray mt-2 text-xs">Booking Completed</div>
+                <div className="text-gray  text-xs">Booking Completed</div>
                 <h3 className="font-bold text-lg">{single.name}</h3>
-                <p className="text-gray text-sm">{single.lastMessage}</p>
+                <p className="text-gray text-base -mt-1">
+                  {single.lastMessage}
+                </p>
               </div>
             </div>
             <Border />
