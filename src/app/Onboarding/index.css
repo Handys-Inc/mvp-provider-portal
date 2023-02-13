@@ -9,3 +9,19 @@
 .list-card h4 {
   @apply text-lg font-bold;
 }
+
+.holder {
+  @apply min-h-screen pb-20 bg-lightGray px-2 md:px-10;
+}
+
+.card-footer {
+  @apply my-5 flex justify-between;
+}
+
+.card {
+  @apply max-w-xl mx-auto bg-white rounded-xl p-10;
+}
+
+.pill {
+  @apply rounded-full bg-silent hover:bg-secondary text-xs cursor-pointer p-2 px-3  font-light;
+}
