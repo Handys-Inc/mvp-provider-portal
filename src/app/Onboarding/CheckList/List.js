@@ -7,7 +7,7 @@ import { RiUserAddLine } from "react-icons/ri";
 import { TbFaceId } from "react-icons/tb";
 import { BiBriefcaseAlt } from "react-icons/bi";
 
-function List() {
+function List({setStep}) {
   return (
     <div className="bg-white rounded-lg shadow-sm max-w-3xl mx-auto py-5 ">
       {/* Intro */}
@@ -18,7 +18,7 @@ function List() {
         </p>
         <div className="my-4">
           {/* Legal Requirement */}
-          <div className="list-card">
+          <div onClick={() => setStep(1)} className="list-card">
             <div className="flex gap-5 items-center">
               {/* icon */}
               <div className="list-card-icon">
@@ -33,7 +33,7 @@ function List() {
           </div>
 
           {/* Job Profile  */}
-          <div className="list-card">
+          <div onClick={() => setStep(2)} className="list-card">
             <div className="flex gap-5 items-center">
               {/* icon */}
               <div className="list-card-icon">
@@ -48,7 +48,7 @@ function List() {
           </div>
 
           {/* Profile photo */}
-          <div className="list-card">
+          <div onClick={() => setStep(3)} className="list-card">
             <div className="flex gap-5 items-center">
               {/* icon */}
               <div className="list-card-icon">
@@ -63,7 +63,7 @@ function List() {
           </div>
 
           {/* ID CARD */}
-          <div className="list-card">
+          <div onClick={() => setStep(4)} className="list-card">
             <div className="flex gap-5 items-center">
               {/* icon */}
               <div className="list-card-icon">
@@ -78,7 +78,7 @@ function List() {
           </div>
 
           {/* Three photos */}
-          <div className="list-card">
+          <div onClick={() => setStep(5)} className="list-card">
             <div className="flex gap-5 items-center">
               {/* icon */}
               <div className="list-card-icon">

@@ -1,26 +1,83 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { NavLink } from "react-router-dom";
+import OnboardHeader from "./components/OnboardHeader";
 
-import logo from "../../assets/logo/logo.svg";
-
-// Extras
+// Steps
 import List from "./CheckList/List";
+import Consent from "./Consent/Consent";
+import Profile from "./Profile/Profile";
+import Work from "./Work/Work";
+import IDCard from "./IDCard/IDCard";
+import PersonalPhoto from "./PersonalPhoto/PersonalPhoto";
 
 import "./index.css";
 
 function Onboarding() {
-  return (
-    <div className="min-h-screen pb-20 bg-lightGray px-2 md:px-10">
-      <div className="py-5">
-        {" "}
-        <NavLink to="/">
-          <img className="hidden md:block w-20 md:w-28" src={logo} alt="Logo" />
-        </NavLink>
-      </div>
-      <List />
-    </div>
-  );
+  const [step, setStep] = useState(0);
+
+  switch (step) {
+    // CHECKLIST
+    case 0:
+      return (
+        <div className="holder">
+          <OnboardHeader />
+          <List setStep={setStep} />
+        </div>
+      );
+
+    // 1 | LEGAL CONCENT
+    case 1:
+      return (
+        <div className="holder">
+          <OnboardHeader />
+          <Consent setStep={setStep} />
+        </div>
+      );
+
+    // 2 | JOB PROFILE
+    case 2:
+      return (
+        <div className="holder">
+          <OnboardHeader />
+          <Profile setStep={setStep} />
+        </div>
+      );
+
+    // 3| PROFILE PHOTO
+    case 3:
+      return (
+        <div className="holder">
+          <OnboardHeader />
+          <PersonalPhoto setStep={setStep} />
+        </div>
+      );
+
+    // 4 | ID CARD
+    case 4:
+      return (
+        <div className="holder">
+          <OnboardHeader />
+          <IDCard setStep={setStep} />
+        </div>
+      );
+
+    // 5 | THREE PHOTOS OF WORK
+    case 5:
+      return (
+        <div className="holder">
+          <OnboardHeader />
+          <Work setStep={setStep} />
+        </div>
+      );
+
+    default:
+      return (
+        <div className="holder">
+          <OnboardHeader />
+          <List setStep={setStep} />
+        </div>
+      );
+  }
 }
 
 export default Onboarding;
