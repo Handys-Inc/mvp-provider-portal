@@ -10,6 +10,10 @@
   @apply text-lg font-bold;
 }
 
+.asterisk {
+  @apply text-primary;
+}
+
 .holder {
   @apply min-h-screen pb-20 bg-lightGray px-2 md:px-10;
 }
@@ -19,9 +23,25 @@
 }
 
 .card {
-  @apply max-w-xl mx-auto bg-white rounded-xl p-10;
+  @apply max-w-2xl mx-auto bg-white rounded-xl p-10;
 }
 
 .pill {
-  @apply rounded-full bg-silent hover:bg-secondary text-xs cursor-pointer p-2 px-3  font-light;
+  @apply rounded-full bg-silent hover:bg-lightSecondary text-sm cursor-pointer p-2 px-3  font-light;
+}
+
+.list-disc {
+  @apply text-xs;
+}
+
+.upload-card {
+  @apply border border-gray text-center rounded-lg border-dashed flex justify-center items-center w-full h-[10rem];
+}
+
+.upload-card p {
+  @apply font-light text-sm;
+}
+
+.upload-card h5 {
+  @apply font-bold text-lg;
 }

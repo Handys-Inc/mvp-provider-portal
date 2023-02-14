@@ -49,6 +49,12 @@ function DetailsPane({ showHeader = true, details }) {
           Chemin De L' Albatros,Kamloops, qc, Canada
         </p>
       </div>
+
+      <Border />
+      <div className="mx-5">
+        <button className="w-full btn-primary mb-5">Approve</button>
+        <button className="w-full btn-primary-outline">Decline</button>
+      </div>
     </div>
   );
 }

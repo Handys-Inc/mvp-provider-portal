@@ -7,7 +7,7 @@ import { RiUserAddLine } from "react-icons/ri";
 import { TbFaceId } from "react-icons/tb";
 import { BiBriefcaseAlt } from "react-icons/bi";
 
-function List({setStep}) {
+function List({ setStep }) {
   return (
     <div className="bg-white rounded-lg shadow-sm max-w-3xl mx-auto py-5 ">
       {/* Intro */}
@@ -91,6 +91,10 @@ function List({setStep}) {
             </div>
             <BsArrowRight className="text-gray" size={24} />
           </div>
+
+          <button disabled className="w-10/12 mx-auto  px-5 my-5 btn-primary">
+            Finish setup
+          </button>
         </div>
       </div>
     </div>

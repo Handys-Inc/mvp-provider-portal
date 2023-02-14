@@ -16,6 +16,14 @@ function Consent({ setStep }) {
       </p>
 
       <Border />
+
+      {/* Checklist */}
+      <div className="flex my-5 mb-10 justify-between">
+        <h3>I Agree</h3>
+        <div>
+          <input type="checkbox" />
+        </div>
+      </div>
       <div className="card-footer">
         <button onClick={() => setStep(0)} className="btn-primary-outline">
           Back

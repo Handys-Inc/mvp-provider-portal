@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import OnboardHeader from "./components/OnboardHeader";
 
@@ -14,6 +14,16 @@ import "./index.css";
 
 function Onboarding() {
   const [step, setStep] = useState(0);
+
+  // Getting current position
+  const position = window.location.search;
+  const arrSplit = position.split("=")[1];
+
+  useEffect(() => {
+    if (parseInt(arrSplit)) {
+      setStep(parseInt(arrSplit));
+    }
+  }, [arrSplit]);
 
   switch (step) {
     // CHECKLIST
