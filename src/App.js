@@ -16,6 +16,7 @@ import Calendar from "./app/Calendar/Calendar";
 import Onboarding from "./app/Onboarding/Onboarding";
 import Interac from "./app/Onboarding/Payouts/Interac";
 import Paypal from "./app/Onboarding/Payouts/Paypal";
+import Profile from "./app/Profile/Profile";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         {/*General Routes */}
         <Route path="/" exact element={<Today />} />
+        <Route path="/profile" exact element={<Profile />} />
         <Route path="/perks" exact element={<Perks />} />
         <Route path="/transactions" exact element={<Transactions />} />
         <Route path="/inbox" exact element={<Messages />} />
