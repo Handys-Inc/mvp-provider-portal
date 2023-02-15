@@ -1,34 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../../components/Layout/Layout";
 
 import pro from "../../assets/images/profile.png";
 
-import { FiCheck } from "react-icons/fi";
-
-import { NavLink } from "react-router-dom";
+import { FiCheck, FiEdit2 } from "react-icons/fi";
 
 import Border from "../../components/Border/Border";
 
+import Modal from "../../components/Modal/Modal";
+
 import "./index.css";
+import JobProfile from "../Onboarding/JobProfile/JobProfile";
 
 function Profile() {
+  const [showEditModal, setShowEditModal] = useState(false);
+
   return (
     <Layout>
-      <div className="mt-20 mb-5 max-w-5xl mx-auto">
-        <NavLink to="/account">
-          <p className="text-sm underline">Back</p>
-        </NavLink>
-      </div>
-      <div className="flex gap-10 max-w-5xl mx-auto mb-32">
+      <div className="mt-20 mb-5 max-w-7xl mx-auto"></div>
+      <div className="flex gap-10 max-w-6xl mx-auto mb-32">
         {/* Account Card */}
         <div className="account-card w-80">
           <img className="w-24 mx-auto" src={pro} alt="profile" />
-          <p className="mt-2 underline underline-offset-4 text-center">
-            Change photo
-          </p>
 
           <Border />
-          <h2 className="text-gray text-lg">Username Confirmed</h2>
+          <h2 className="text-black font-semibold text-lg">
+            Username Confirmed
+          </h2>
           <div>
             <p className="text-gray mt-2">
               <FiCheck className="inline-block" /> Phone Number
@@ -46,7 +44,7 @@ function Profile() {
               <FiCheck className="inline-block" /> Interac verified
             </p>
           </div>
-          <p className="mt-32 text-gray text-sm">
+          <p className="mt-20 text-gray text-sm">
             Learn more about how confirming account info helps keep the Handys
             community safe
           </p>
@@ -54,13 +52,29 @@ function Profile() {
 
         {/* Account Info & Reviews */}
         <div className="flex-1">
-          <h2 className="font-bold text-4xl">Username, Painter</h2>
-          <p className="my-2 font-light text-gray text-sm">Joined in 2019</p>
-          <p className="underline ">Edit Profile</p>
+          <div className="flex justify-between items-center">
+            <div>
+              <h2 className="font-bold text-4xl">Username, Painter</h2>
+              <p className="my-2 font-light text-gray text-base">
+                2-5 years experience
+              </p>
+              <p className="my-2 font-light text-gray text-sm">
+                Joined in 2019
+              </p>
+            </div>
+            <div>
+              <p
+                onClick={() => setShowEditModal(true)}
+                className="underline underline-offset-4 hover:text-primary cursor-pointer "
+              >
+                Edit Profile
+              </p>
+            </div>
+          </div>
 
           <Border />
           <h2 className="font-bold text-xl">About</h2>
-          <p className="my-2 font-light text-gray text-sm">
+          <p className="my-2 font-light text-gray text-base">
             I am a skilled painter with over 10 years of experience in both
             interior and exterior painting. I specialize in residential and
             commercial properties and pride myself on my attention to detail and
@@ -70,15 +84,29 @@ function Profile() {
           </p>
           <Border />
           <h2 className="font-bold text-xl">Per hour rate</h2>
-          <p className="my-2 font-light text-gray text-sm">$65</p>
+          <p className="my-2 font-light text-gray text-base">$65</p>
           <Border />
           <h2 className="font-bold text-xl">Booking</h2>
-          <p className="my-2 font-light text-gray text-sm">Instant Booking</p>
-          <Border/>
-           <h2 className="font-bold text-xl">Set availability</h2>
-          <p className="my-2 font-light text-gray text-sm">Instant Booking</p>
+          <p className="my-2 font-light text-gray text-base">Instant Booking</p>
+          <Border />
+          <h2 className="font-bold text-xl">Set availability</h2>
+          <div className="mt-5 items-center flex gap-4">
+            <span className="rounded-full text-sm bg-lightGray py-2 px-4">
+              Jan 6, 2023 - March 6, 2023
+            </span>
+            <FiEdit2 className="text-primary cursor-pointer" />
+          </div>
         </div>
       </div>
+
+      {/* Modals */}
+      <Modal
+        title="Edit Profile"
+        isOpen={showEditModal}
+        setIsOpen={setShowEditModal}
+      >
+        <JobProfile setExistingModal={setShowEditModal} />
+      </Modal>
     </Layout>
   );
 }

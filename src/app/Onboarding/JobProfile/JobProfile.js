@@ -13,7 +13,7 @@ import DateRange from "./components/DateRange";
 
 import { FiEdit2 } from "react-icons/fi";
 
-function Profile({ setStep }) {
+function JobProfile({ setStep }) {
   const [booking, setBooking] = useState("instant");
 
   const [showPicker, setShowPicker] = useState(false);
@@ -174,4 +174,4 @@ function Profile({ setStep }) {
   );
 }
 
-export default Profile;
+export default JobProfile;

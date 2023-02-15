@@ -5,7 +5,7 @@ import OnboardHeader from "./components/OnboardHeader";
 // Steps
 import List from "./CheckList/List";
 import Consent from "./Consent/Consent";
-import Profile from "./Profile/Profile";
+import JobProfile from "./JobProfile/JobProfile";
 import Work from "./Work/Work";
 import IDCard from "./IDCard/IDCard";
 import PersonalPhoto from "./PersonalPhoto/PersonalPhoto";
@@ -49,7 +49,7 @@ function Onboarding() {
       return (
         <div className="holder">
           <OnboardHeader />
-          <Profile setStep={setStep} />
+          <JobProfile setStep={setStep} />
         </div>
       );
 

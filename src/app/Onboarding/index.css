@@ -23,7 +23,7 @@
 }
 
 .card {
-  @apply max-w-2xl mx-auto bg-white rounded-xl p-10;
+  @apply text-left max-w-2xl mx-auto bg-white rounded-xl p-5;
 }
 
 .pill {
