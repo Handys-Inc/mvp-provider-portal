@@ -40,7 +40,15 @@ function Header() {
           {links.map((link) => {
             return (
               <NavLink to={link.href}>
-                <li>{link.label}</li>
+                <li
+                  className={`${
+                    link.href === window.location.pathname
+                      ? "custom-underline "
+                      : ""
+                  }`}
+                >
+                  {link.label}
+                </li>
               </NavLink>
             );
           })}

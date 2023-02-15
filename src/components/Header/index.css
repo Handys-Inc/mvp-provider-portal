@@ -1,3 +1,7 @@
 .main-menu li {
   @apply inline-block mx-5 cursor-pointer hover:text-primary;
 }
+
+.custom-underline {
+  @apply underline underline-offset-8;
+}

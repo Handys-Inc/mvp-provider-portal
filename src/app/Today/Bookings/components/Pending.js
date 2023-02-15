@@ -1,7 +1,11 @@
 import React from "react";
+
 import Nodata from "./Nodata";
 
-function Upcoming({ data }) {
+import { BiCheck } from "react-icons/bi";
+import { IoMdClose } from "react-icons/io";
+
+function Pending({ data }) {
   return (
     <div className="my-5 mb-20">
       {data.length === 0 ? (
@@ -14,6 +18,7 @@ function Upcoming({ data }) {
             <div class="header-bar">Amount</div>
             <div class="header-bar">Booking code</div>
             <div class="header-bar">Date</div>
+            <div class="header-bar">Action</div>
           </div>
 
           <div>
@@ -26,6 +31,16 @@ function Upcoming({ data }) {
                   <div class="header-bar">{single.code}</div>
 
                   <div class="header-bar">{single.date}</div>
+                  <div class="header-bar flex gap-2">
+                    <BiCheck
+                      size={25}
+                      className="text-[#118431] cursor-pointer"
+                    />
+                    <IoMdClose
+                      size={22}
+                      className="text-[#E80202] cursor-pointer"
+                    />
+                  </div>
                 </div>
               );
             })}
@@ -36,4 +51,4 @@ function Upcoming({ data }) {
   );
 }
 
-export default Upcoming;
+export default Pending;
