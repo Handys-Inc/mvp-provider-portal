@@ -17,8 +17,7 @@ function Profile() {
 
   return (
     <Layout>
-      <div className="mt-20 mb-5 max-w-7xl mx-auto"></div>
-      <div className="flex gap-10 max-w-6xl mx-auto mb-32">
+      <div className="flex mt-10 gap-10 max-w-6xl mx-auto mb-32">
         {/* Account Card */}
         <div className="account-card w-80">
           <img className="w-24 mx-auto" src={pro} alt="profile" />

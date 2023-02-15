@@ -5,13 +5,17 @@
 
 /* RESOURCES */
 .resource-card {
-  @apply rounded-xl border border-gray cursor-pointer;
+  @apply rounded-3xl  h-[24rem]  cursor-pointer;
 }
 
 .resource-card img {
-  @apply rounded-tr-xl rounded-tl-xl;
+  @apply h-[18rem] w-full object-cover rounded-tr-3xl rounded-tl-3xl;
 }
 
 .booking-scroll-none::-webkit-scrollbar {
   display: none;
+}
+
+ul li {
+  @apply list-disc mb-5;
 }
