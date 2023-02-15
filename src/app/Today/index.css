@@ -5,13 +5,33 @@
 
 /* RESOURCES */
 .resource-card {
-  @apply rounded-xl border border-gray cursor-pointer;
+  @apply rounded-3xl  h-[21rem]  cursor-pointer;
 }
 
 .resource-card img {
-  @apply rounded-tr-xl rounded-tl-xl;
+  @apply h-[15rem] w-full object-cover rounded-tr-3xl rounded-tl-3xl;
 }
 
 .booking-scroll-none::-webkit-scrollbar {
   display: none;
+}
+
+ul li {
+  @apply list-disc mb-5;
+}
+
+.space-under > td {
+  @apply pb-10;
+}
+
+.header-bar {
+  @apply px-6 py-3 w-1/5;
+}
+
+.header-pos {
+  @apply flex text-left text-gray w-full;
+}
+
+.booking-content {
+  @apply flex text-left font-normal text-gray hover:border-lightSecondary text-sm w-full border border-faintGray rounded-2xl mb-2 shadow-lg shadow-faintGray py-2;
 }
