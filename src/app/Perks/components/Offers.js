@@ -28,6 +28,7 @@ function Offers() {
       desc: "Get a 20 minute tax consultation with a Chartered Professional Accountant on how to maximize your tax savings",
     },
   ];
+
   return (
     <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-10 mb-32">
       {offers.map((offer, index) => {
