@@ -29,6 +29,8 @@ function App() {
         <Route path="/transactions" exact element={<Transactions />} />
         <Route path="/inbox" exact element={<Messages />} />
         <Route path="/calendar" exact element={<Calendar />} />
+
+        {/* onboarding */}
         <Route path="/onboarding" exact element={<Onboarding />} />
         <Route path="/onboarding/interac" exact element={<Interac />} />
         <Route path="/onboarding/paypal" exact element={<Paypal />} />
