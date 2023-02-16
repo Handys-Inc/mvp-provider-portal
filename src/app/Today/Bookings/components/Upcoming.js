@@ -8,7 +8,7 @@ function Upcoming({ data }) {
         <Nodata />
       ) : (
         <div className="text-base font-light text-gray">
-          <div className="header-pos">
+          <div className=" header-pos">
             <div class="header-bar">Name</div>
             <div class="header-bar">Short job description</div>
             <div class="header-bar">Amount</div>
@@ -20,12 +20,31 @@ function Upcoming({ data }) {
             {data.map((single, index) => {
               return (
                 <div key="index" className="booking-content">
-                  <div class="header-bar">{single.name}</div>
-                  <div class="header-bar">{single.desc}</div>
-                  <div class="header-bar">${single.amount}</div>
-                  <div class="header-bar">{single.code}</div>
+                  <div className="twos-split">
+                    {" "}
+                    <div class="header-bar-content">
+                      <p className="desc">Name</p>
+                      {single.name}
+                    </div>
+                    <div class="header-bar-content-more">
+                      <p className="desc">Short job description</p>
+                      {single.desc}
+                    </div>
+                  </div>
+                  <div className="twos-split">
+                    <div class="header-bar-content">
+                      <p className="desc">Amount</p>${single.amount}
+                    </div>
+                    <div class="header-bar-content-more">
+                      <p className="desc">Booking Code</p>
+                      {single.code}
+                    </div>
+                  </div>
 
-                  <div class="header-bar">{single.date}</div>
+                  <div class="header-bar-last">
+                    <p className="desc">Date</p>
+                    {single.date}
+                  </div>
                 </div>
               );
             })}
