@@ -29,6 +29,7 @@ function Bookings() {
       date: "February 6",
     },
   ];
+
   const pending = [
     {
       name: "Jane Doe",
@@ -36,6 +37,13 @@ function Bookings() {
       amount: 97.01,
       code: "HA1203Y",
       date: "February 6",
+    },
+    {
+      name: "Frank Wilson",
+      desc: "Plumbing work in the kitchen",
+      amount: 223.78,
+      code: "HK78908Y",
+      date: "March 2",
     },
   ];
 

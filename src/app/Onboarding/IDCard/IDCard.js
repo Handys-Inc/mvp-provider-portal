@@ -13,7 +13,7 @@ function IDCard({ setStep }) {
         Make sure your photos aren’t blurry and the front of your identity card
         clearly shows your face.
       </p>
-      <div className="flex items-center justify-between my-5 gap-5">
+      <div className="flex flex-col md:flex-row items-center justify-between my-5 gap-5">
         {/* front */}
         <div className="upload-card">
           <div className="text-center mx-auto">

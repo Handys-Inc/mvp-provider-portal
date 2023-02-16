@@ -25,21 +25,41 @@ function Pending({ data }) {
             {data.map((single, index) => {
               return (
                 <div key="index" className="booking-content">
-                  <div class="header-bar">{single.name}</div>
-                  <div class="header-bar">{single.desc}</div>
-                  <div class="header-bar">${single.amount}</div>
-                  <div class="header-bar">{single.code}</div>
-
-                  <div class="header-bar">{single.date}</div>
-                  <div class="header-bar flex gap-2">
-                    <BiCheck
-                      size={25}
-                      className="text-[#118431] cursor-pointer"
-                    />
-                    <IoMdClose
-                      size={22}
-                      className="text-[#E80202] cursor-pointer"
-                    />
+                  <div className="twos-split">
+                    {" "}
+                    <div class="header-bar-content">
+                      <p className="desc">Name</p>
+                      {single.name}
+                    </div>
+                    <div class="header-bar-content-more">
+                      <p className="desc">Short job description</p>
+                      {single.desc}
+                    </div>
+                  </div>
+                  <div className="twos-split">
+                    <div class="header-bar-content">
+                      <p className="desc">Amount</p>${single.amount}
+                    </div>
+                    <div class="header-bar-content-more">
+                      <p className="desc">Booking Code</p>
+                      {single.code}
+                    </div>
+                  </div>
+                  <div className="twos-split">
+                    <div class="header-bar-content">
+                      <p className="desc">Date</p>
+                      {single.date}
+                    </div>
+                    <div class="header-bar-content md:items-start items-center gap-2 flex">
+                      <BiCheck
+                        size={25}
+                        className="text-[#118431] cursor-pointer"
+                      />
+                      <IoMdClose
+                        size={22}
+                        className="text-[#E80202] cursor-pointer"
+                      />
+                    </div>
                   </div>
                 </div>
               );

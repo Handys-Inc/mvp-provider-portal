@@ -11,7 +11,7 @@ function Layout({
   // Current is used to render out the active navbar icon
 
   return (
-    <div className="h-screen min-w-full overflow-y-auto">
+    <div className="h-screen min-w-full overflow-y-auto pb-28">
       {showHeader ? <Header /> : null}
       <div className="px-2 md:px-5 min-w-full">{children}</div>
       <BottomNav current={current} showBottomNav={showBottomNav} />

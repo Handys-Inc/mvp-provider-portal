@@ -18,7 +18,7 @@ function Work({ setStep }) {
       </p>
 
       {/* PHOTOS */}
-      <div className="flex gap-5">
+      <div className="flex flex-col md:flex-row gap-5">
         <div className="border border-mute mb-5 rounded-lg flex items-center justify-center w-full h-[10rem]">
           +
         </div>
