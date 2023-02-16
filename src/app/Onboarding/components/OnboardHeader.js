@@ -10,7 +10,7 @@ function OnboardHeader() {
       <div className="py-5">
         {" "}
         <NavLink to="/">
-          <img className="hidden md:block w-20 md:w-28" src={logo} alt="Logo" />
+          <img className="w-20 md:w-28" src={logo} alt="Logo" />
         </NavLink>
       </div>
     </div>

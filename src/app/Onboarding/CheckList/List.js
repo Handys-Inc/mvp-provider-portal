@@ -6,10 +6,11 @@ import { FiSettings } from "react-icons/fi";
 import { RiUserAddLine } from "react-icons/ri";
 import { TbFaceId } from "react-icons/tb";
 import { BiBriefcaseAlt } from "react-icons/bi";
+import { IoDocumentTextOutline } from "react-icons/io5";
 
 function List({ setStep }) {
   return (
-    <div className="bg-white rounded-lg shadow-sm max-w-3xl mx-auto py-5 ">
+    <div className="card">
       {/* Intro */}
       <div className="my-5 text-center">
         <h3 className="text-3xl font-semibold">Welcome Username,</h3>
@@ -77,8 +78,23 @@ function List({ setStep }) {
             <BsArrowRight className="text-gray" size={24} />
           </div>
 
-          {/* Three photos */}
+          {/* Insurance */}
           <div onClick={() => setStep(5)} className="list-card">
+            <div className="flex gap-5 items-center">
+              {/* icon */}
+              <div className="list-card-icon">
+                <IoDocumentTextOutline />
+              </div>
+              <div className="text-left">
+                <h4>Upload your insurance</h4>
+                <p className="text-gray font-light">Get started</p>
+              </div>
+            </div>
+            <BsArrowRight className="text-gray" size={24} />
+          </div>
+
+          {/* Three photos */}
+          <div onClick={() => setStep(6)} className="list-card">
             <div className="flex gap-5 items-center">
               {/* icon */}
               <div className="list-card-icon">

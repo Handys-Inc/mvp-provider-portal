@@ -11,6 +11,7 @@ import IDCard from "./IDCard/IDCard";
 import PersonalPhoto from "./PersonalPhoto/PersonalPhoto";
 
 import "./index.css";
+import Insurance from "./Insurance/Insurance";
 
 function Onboarding() {
   const [step, setStep] = useState(0);
@@ -71,12 +72,21 @@ function Onboarding() {
         </div>
       );
 
-    // 5 | THREE PHOTOS OF WORK
+    // 5 | Insurance
     case 5:
       return (
         <div className="holder">
           <OnboardHeader />
-          <Work setStep={setStep} />
+          <Insurance setStep={setStep} />
+        </div>
+      );
+
+    // 6 | THREE PHOTOS OF WORK
+    case 6:
+      return (
+        <div className="holder">
+          <OnboardHeader />
+          <Insurance setStep={setStep} />
         </div>
       );
 

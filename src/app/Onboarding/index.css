@@ -1,5 +1,5 @@
 .list-card {
-  @apply flex justify-between cursor-pointer hover:border-primary mb-4 items-center w-10/12 mx-auto py-5 px-5 border border-faintGray rounded-lg;
+  @apply flex justify-between cursor-pointer hover:border-primary mb-4 items-center w-full md:w-10/12 mx-auto py-2 md:py-5 px-5 border border-faintGray rounded-lg;
 }
 
 .list-card-icon {
@@ -15,7 +15,7 @@
 }
 
 .holder {
-  @apply min-h-screen pb-20 bg-lightGray px-2 md:px-10;
+  @apply min-h-screen pb-20 bg-white md:bg-lightGray px-1 md:px-10;
 }
 
 .card-footer {
@@ -23,11 +23,11 @@
 }
 
 .card {
-  @apply text-left max-w-2xl mx-auto bg-white rounded-xl p-5;
+  @apply text-left w-full md:max-w-2xl mx-auto bg-white rounded-xl p-3 md:p-5;
 }
 
 .pill {
-  @apply rounded-full bg-silent hover:bg-lightSecondary text-sm cursor-pointer p-2 px-3  font-light;
+  @apply rounded-full bg-silent hover:bg-lightSecondary text-sm cursor-pointer p-2 px-4 font-light;
 }
 
 .list-disc {

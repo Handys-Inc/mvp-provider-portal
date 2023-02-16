@@ -25,12 +25,22 @@ function JobProfile({ setStep }) {
       <h5 className="mb-3 text-lg">
         I am a:<span className="asterisk">*</span>
       </h5>
-      <div className="flex gap-4 mb-5">
-        <div className="pill">Painter</div>
-        <div className="pill">Plumber</div>
-        <div className="pill">Electrician</div>
-        <div className="pill">Cleaner</div>
-        <div className="pill">General handy person</div>
+      <div className="booking-scroll-none flex flex-nowrap overflow-x-auto space-x-3 w-full">
+        <div>
+          <p className="pill">Painter</p>
+        </div>
+        <div>
+          <p className="pill">Plumber</p>
+        </div>
+        <div>
+          <p className="pill">Electrician</p>
+        </div>
+        <div>
+          <p className="pill">Cleaner</p>
+        </div>
+        <div>
+          <p className="pill w-48">General handy person</p>
+        </div>
       </div>
       {/* Experience */}
       <h5 className="mb-3 text-lg">

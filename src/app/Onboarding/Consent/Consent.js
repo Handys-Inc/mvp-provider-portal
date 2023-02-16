@@ -5,7 +5,7 @@ import Border from "../../../components/Border/Border";
 function Consent({ setStep }) {
   return (
     <div className="card">
-      <h4 className="text-4xl font-semibold mb-5">Legal conset</h4>
+      <h4 className="text-2xl md:text-4xl font-semibold mb-5">Legal conset</h4>
       <p className="font-light text-[#626262]">
         By clicking you agree. you are consenting to Handys, its affiliates or
         partners obtaining your commercial driving record from ICBC. which is
