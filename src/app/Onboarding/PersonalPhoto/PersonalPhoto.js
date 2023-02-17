@@ -7,7 +7,9 @@ function PersonalPhoto({ setStep }) {
   const [picture, setPicture] = useState(null);
   const [showCam, setShowCam] = useState(false);
 
-  // dropzone
+  const imageUpload = (file) => {
+    setPicture(URL.createObjectURL(file));
+  };
 
   return (
     <div className="card w-full">
@@ -38,12 +40,23 @@ function PersonalPhoto({ setStep }) {
         </div>
       ) : (
         <div className="border border-mute mb-5 rounded-lg flex items-center justify-center w-full h-[10rem]">
-          No Image taken
+          Upload or take a photo
         </div>
       )}
 
       <div className="flex w-full md:w-9/12 justify-center mx-auto gap-10">
-        <button className="btn-primary w-full">Upload photo</button>
+        <label className="btn-primary cursor-pointer w-full text-center">
+          <input
+            type="file"
+            accept="image/*"
+            onChange={(e) => {
+              setPicture(null);
+              imageUpload(e.target.files[0]);
+            }}
+          />
+          Upload photo
+        </label>
+
         <button
           onClick={() => {
             setShowCam(true);

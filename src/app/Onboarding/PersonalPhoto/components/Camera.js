@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import Webcam from "react-webcam";
 
 const WebcamComponent = () => <Webcam />;
@@ -11,7 +11,7 @@ const videoConstraints = {
 const Camera = ({ picture, setPicture, setIsOpen }) => {
   const webcamRef = React.useRef(null);
 
-  const capture = React.useCallback(() => {
+  const capture = useCallback(() => {
     const pictureSrc = webcamRef.current.getScreenshot();
     setPicture(pictureSrc);
   });
