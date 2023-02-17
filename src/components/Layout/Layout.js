@@ -16,7 +16,7 @@ function Layout({
       {showHeader ? <Header /> : null}
 
       {/* Children: 83vh */}
-      <div className="px-2 md:px-5 min-w-full overflow-y-auto h-[83vh] md:h-[88vh]">
+      <div className="px-3 md:px-5 bg-red-400 min-w-full overflow-y-auto h-[83vh] md:h-[88vh]">
         {children}
       </div>
 
