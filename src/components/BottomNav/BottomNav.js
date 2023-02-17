@@ -22,7 +22,7 @@ function BottomNav({ showBottomNav, current }) {
     <div
       className={`${
         showBottomNav ? "flex " : "hidden"
-      } justify-between h-[10%] text-sm px-4 py-4 pb-5 items-center md:hidden fixed bottom-0 bg-white  w-full shadow-md border border-faintGray`}
+      }  fixed bottom-0 h-[10vh] justify-between text-sm px-4 py-4 pb-5 items-center md:hidden  bg-white  w-full shadow-md border border-faintGray`}
     >
       {/* TODAY */}
       <NavLink to="/">

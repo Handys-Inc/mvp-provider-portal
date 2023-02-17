@@ -11,11 +11,11 @@ import { FiHelpCircle } from "react-icons/fi";
 function Menu() {
   return (
     <Layout>
-      <div className="flex flex-col justify-between h-full bg-green-300 w-full items-end md:hidden">
+      <div className="flex flex-col justify-between h-[95%]  w-full items-end md:hidden">
         <div className="w-full">
           <p className="text-left font-bold text-2xl">Menu</p>
         </div>
-        <div className="w-full bg-yellow-300">
+        <div className="w-full">
           {/* help */}
           <NavLink to="/m/help">
             <div className="flex justify-between py-4 text-lg items-center text-gray">

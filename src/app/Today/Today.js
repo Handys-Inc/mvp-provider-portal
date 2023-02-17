@@ -8,6 +8,9 @@ import Resources from "./Resources/Resources";
 import { NavLink } from "react-router-dom";
 
 function Today() {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Layout>
       {/* Header */}
