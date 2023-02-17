@@ -86,7 +86,7 @@ function Onboarding() {
       return (
         <div className="holder">
           <OnboardHeader />
-          <Insurance setStep={setStep} />
+          <Work setStep={setStep} />
         </div>
       );
 

@@ -18,7 +18,7 @@ function Insurance({ step, setStep }) {
 
         {/* back */}
       </div>
-      <button onClick={() => setStep(5)} className="btn-primary w-full">
+      <button onClick={() => setStep(6)} className="btn-primary w-full">
         Finish
       </button>
     </div>
