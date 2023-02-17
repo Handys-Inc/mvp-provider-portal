@@ -72,7 +72,7 @@ function MobileInbox() {
   ]);
 
   return (
-    <div className="mb-48 pt-5">
+    <div className="pt-5">
       {/* Header */}
       <h4 className="mb-8 text-2xl font-bold">All Messages</h4>
 

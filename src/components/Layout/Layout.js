@@ -11,9 +11,16 @@ function Layout({
   // Current is used to render out the active navbar icon
 
   return (
-    <div className="h-screen min-w-full overflow-y-auto pb-28">
+    <div className="h-screen min-w-full">
+      {/* Header: h-[7vh] md:h-[12vh] */}
       {showHeader ? <Header /> : null}
-      <div className="px-2 md:px-5 min-w-full">{children}</div>
+
+      {/* Children: 83vh */}
+      <div className="px-2 md:px-5 min-w-full overflow-y-auto h-[83vh] md:h-[88vh]">
+        {children}
+      </div>
+
+      {/* bottom nav: h-[10vh] */}
       <BottomNav current={current} showBottomNav={showBottomNav} />
     </div>
   );

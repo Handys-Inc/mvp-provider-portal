@@ -11,7 +11,7 @@ import { FiHelpCircle } from "react-icons/fi";
 function Menu() {
   return (
     <Layout>
-      <div className="flex flex-col justify-between h-[77vh]  w-full items-end md:hidden">
+      <div className="flex flex-col justify-between h-full w-full items-end md:hidden">
         <div className="w-full">
           <p className="text-left font-bold text-2xl">Menu</p>
         </div>
@@ -48,7 +48,7 @@ function Menu() {
             </button>
           </a>
 
-          <button className="btn-primary w-full mb-2">Log Out</button>
+          <button className="btn-primary w-full mb-3">Log Out</button>
         </div>
       </div>
     </Layout>
