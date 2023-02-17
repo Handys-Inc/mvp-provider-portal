@@ -17,7 +17,7 @@
 }
 
 ul li {
-  @apply list-disc mb-5;
+  @apply list-disc;
 }
 
 .header-pos {

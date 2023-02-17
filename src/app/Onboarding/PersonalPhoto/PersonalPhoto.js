@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 
-function PersonalPhoto({setStep}) {
+import Modal from "../../../components/Modal/Modal";
+import Camera from "./components/Camera";
+
+function PersonalPhoto({ setStep }) {
+  const [picture, setPicture] = useState(null);
+  const [showCam, setShowCam] = useState(false);
+
+  const imageUpload = (file) => {
+    setPicture(URL.createObjectURL(file));
+  };
+
   return (
-    <div className="card">
-      <h4 className="text-3xl font-semibold mb-5">
+    <div className="card w-full">
+      <h4 className="text-xl md:text-3xl font-semibold mb-5">
         Take or upload your profile photo
       </h4>
       <p>
@@ -16,11 +26,61 @@ function PersonalPhoto({setStep}) {
         2. Make sure the photo is well lit, free of glare, and in focus <br />
         3. No photos of a photo, filters, or alterations
       </p>
-      <div className="border border-mute mb-5 rounded-lg flex items-center justify-center w-full h-[10rem]">
-        +
+      {picture !== null ? (
+        <div className="w-full mx-auto text-center">
+          <div className="border border-mute mx-auto text-center inline-block p-2 rounded-xl">
+            <img className="rounded-xl" src={picture} alt="captured " />
+          </div>
+          <button
+            onClick={() => setStep(4)}
+            className="btn-primary w-full md:w-9/12 my-5"
+          >
+            Continue
+          </button>
+        </div>
+      ) : (
+        <div className="border border-mute mb-5 rounded-lg flex items-center justify-center w-full h-[10rem]">
+          Upload or take a photo
+        </div>
+      )}
+
+      <div className="flex w-full md:w-9/12 justify-center mx-auto gap-10">
+        <label className="btn-primary cursor-pointer w-full text-center">
+          <input
+            type="file"
+            accept="image/*"
+            onChange={(e) => {
+              setPicture(null);
+              imageUpload(e.target.files[0]);
+            }}
+          />
+          Upload photo
+        </label>
+
+        <button
+          onClick={() => {
+            setShowCam(true);
+            setPicture(null);
+          }}
+          className="btn-primary-outline w-full"
+        >
+          Take photo
+        </button>
       </div>
-      <button onClick={() => setStep(4)} className="btn-primary w-full">Upload photo</button>
-      <button className="btn-primary-outline w-full mt-4">Take photo</button>
+
+      {/* Taking photos */}
+      <Modal
+        title="Take Photo"
+        full={false}
+        isOpen={showCam}
+        setIsOpen={setShowCam}
+      >
+        <Camera
+          setIsOpen={setShowCam}
+          picture={picture}
+          setPicture={setPicture}
+        />
+      </Modal>
     </div>
   );
 }
