@@ -25,7 +25,7 @@ function Chat({ details }) {
       </div>
 
       {/* Message Input */}
-      <div className="absolute bottom-4 w-11/12 bg-white flex gap-4 items-center md:mx-5">
+      <div className="fixed bottom-4 w-11/12 bg-white flex gap-4 items-center md:mx-5">
         <div className="rounded-full flex items-center justify-center bg-faintGray w-10 h-10">
           <IoImage />
         </div>

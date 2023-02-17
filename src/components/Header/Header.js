@@ -29,7 +29,7 @@ function Header() {
   ];
 
   return (
-    <div className="block z-30">
+    <div className="block h-[7vh] md:h-[12vh] z-30">
       <div className="flex flex-row justify-between items-center px-5 pt-5 pb-0 md:pb-3">
         <NavLink to="/">
           <img className="hidden md:block w-20 md:w-28" src={logo} alt="Logo" />
@@ -87,7 +87,7 @@ function Header() {
               leaveTo="transform opacity-0 scale-95"
             >
               {/* TODO: ALLOW CLOSE OF NOTIFICATION ONCLICK OUTSIDE OF THE COMPONENT */}
-              <div className="absolute right-0 mt-2 p-5 w-96 origin-top-right divide-y divide-gray-100 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+              <div className="absolute right-0 mt-2 p-5 w-72 md:w-96 origin-top-right divide-y divide-gray-100 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                 <Notifications />
               </div>
             </Transition>

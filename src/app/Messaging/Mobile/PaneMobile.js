@@ -42,7 +42,7 @@ export default function PaneMobile({
           </Transition.Child>
 
           <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-screen  w-full bottom-0 md:items-center md:justify-center md:pt-4 md:pb-4 md:px-4  pb-0 px-0">
+            <div className="flex h-full  w-full bottom-0 md:items-center md:justify-center md:pt-4 md:pb-4 md:px-4  pb-0 px-0">
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"

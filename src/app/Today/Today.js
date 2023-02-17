@@ -11,7 +11,7 @@ function Today() {
   return (
     <Layout>
       {/* Header */}
-      <div className="flex flex-col md:flex-row justify-start items-start md:justify-between md:items-center my-5">
+      <div className="flex flex-col md:flex-row justify-start items-start md:justify-between md:items-center py-5">
         <h4 className="text-2xl font-bold mb-3 md:mb-0">Welcome Username,</h4>
         <NavLink to="/profile">
           <button className="btn-primary-outline">Edit Job Profile</button>

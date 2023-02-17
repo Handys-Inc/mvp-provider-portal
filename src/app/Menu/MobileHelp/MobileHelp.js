@@ -13,7 +13,7 @@ import Border from "../../../components/Border/Border";
 function MobileHelp() {
   return (
     <Layout current="menu" showHeader={false}>
-      <div className="flex flex-col justify-between h-[85vh]  w-full items-end md:hidden">
+      <div className="flex flex-col justify-between h-full w-full items-end md:hidden">
         <div className="mt-10 w-full">
           <p className="text-left font-bold text-lg">
             {" "}

@@ -42,10 +42,14 @@
 /* RESETS */
 html {
   scroll-behavior: smooth;
+  overflow: hidden;
+  height: 100%;
 }
 
 body {
   accent-color: #ce1449;
+  height: 100%;
+  overflow: auto;
 }
 
 /* remove outline from all inputs  */
