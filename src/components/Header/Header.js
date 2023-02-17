@@ -29,7 +29,7 @@ function Header() {
   ];
 
   return (
-    <div className="block h-[7vh] md:h-[12vh] z-30">
+    <div className="block h-[10%] z-30">
       <div className="flex flex-row justify-between items-center px-5 pt-5 pb-0 md:pb-3">
         <NavLink to="/">
           <img className="hidden md:block w-20 md:w-28" src={logo} alt="Logo" />

@@ -10,13 +10,15 @@ function Layout({
 }) {
   // Current is used to render out the active navbar icon
 
+  console.log("inner height!!!!!", window.innerHeight);
+
   return (
-    <div className="h-screen min-w-full">
+    <div className={`h-[${window.innerHeight}px] min-w-full overflow-y-auto`}>
       {/* Header: h-[7vh] md:h-[12vh] */}
       {showHeader ? <Header /> : null}
 
-      {/* Children: 83vh */}
-      <div className="px-3 md:px-5 bg-red-400 min-w-full overflow-y-auto h-[83vh] md:h-[88vh]">
+      {/* Children: 83vh  */}
+      <div className="px-3 md:px-5 bg-red-400 min-w-full overflow-y-auto h-[70%]">
         {children}
       </div>
 
