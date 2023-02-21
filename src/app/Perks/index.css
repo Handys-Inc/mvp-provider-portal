@@ -1,9 +1,9 @@
 .offer-card {
-  @apply border border-gray rounded-xl p-5;
+  @apply border border-none md:border-solid md:border-gray rounded-xl p-3 md:p-5;
 }
 
 .offer-card p {
-  @apply text-gray w-11/12;
+  @apply text-gray w-full md:w-11/12;
 }
 
 /* .offer-card-img {
