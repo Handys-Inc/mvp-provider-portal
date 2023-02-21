@@ -49,3 +49,7 @@
 .upload-remove {
   @apply absolute hover:text-primary cursor-pointer top-2 right-2;
 }
+
+.job-card {
+  @apply border relative hover:border-primary hover:text-primary cursor-pointer border-mute mb-5 rounded-lg flex items-center justify-center w-full h-[10rem];
+}
