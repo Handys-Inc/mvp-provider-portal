@@ -6,6 +6,7 @@ import { NavLink } from "react-router-dom";
 import { TbClipboardText } from "react-icons/tb";
 
 import { IoIosArrowForward } from "react-icons/io";
+import { IoGiftOutline } from "react-icons/io5";
 import { FiHelpCircle } from "react-icons/fi";
 
 function Menu() {
@@ -35,6 +36,19 @@ function Menu() {
               <div className="flex gap-3 items-center ">
                 <TbClipboardText size={24} />
                 Explore resources and tips
+              </div>
+              <div>
+                <IoIosArrowForward />
+              </div>
+            </div>
+          </NavLink>
+
+          {/* Perks */}
+          <NavLink to="/perks">
+            <div className="flex justify-between py-4 text-lg items-center text-gray">
+              <div className="flex gap-3 items-center ">
+                <IoGiftOutline size={24} />
+                Perks
               </div>
               <div>
                 <IoIosArrowForward />

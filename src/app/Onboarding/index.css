@@ -35,7 +35,7 @@
 }
 
 .upload-card {
-  @apply border border-gray text-center rounded-lg border-dashed flex justify-center items-center w-full h-[10rem];
+  @apply relative border border-gray hover:text-primary text-center rounded-lg cursor-pointer hover:border-primary border-dashed flex justify-center items-center w-full h-[10rem];
 }
 
 .upload-card p {
@@ -44,4 +44,12 @@
 
 .upload-card h5 {
   @apply font-bold text-lg;
+}
+
+.upload-remove {
+  @apply absolute hover:text-primary cursor-pointer top-2 right-2;
+}
+
+.job-card {
+  @apply border relative hover:border-primary hover:text-primary cursor-pointer border-mute mb-5 rounded-lg flex items-center justify-center w-full h-[10rem];
 }

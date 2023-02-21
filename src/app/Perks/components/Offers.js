@@ -30,17 +30,17 @@ function Offers() {
   ];
 
   return (
-    <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-10 mb-32">
+    <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-10 mb-10 md:mb-32">
       {offers.map((offer, index) => {
         return (
           <div
             key={index}
-            className="offer-card h-[17rem] md:h-[15rem] flex flex-col gap-5"
+            className="offer-card h-auto md:h-[16rem] flex flex-col gap-5"
           >
             <div className="h-1/4 flex justify-start">
               <img className="object-contain" src={offer.image} alt="bmo" />
             </div>
-            <div className="h-2/4">
+            <div className="md:h-2/4">
               <p>
                 {offer.desc}{" "}
                 <span className="underline underline-offset-4 cursor-pointer">
@@ -48,7 +48,7 @@ function Offers() {
                 </span>
               </p>
             </div>
-            <div className="h-1/4">
+            <div className="md:h-1/4">
               <button className="btn-primary-outline">Redeem offer</button>
             </div>
           </div>
