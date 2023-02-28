@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
 import { IoIosCloseCircle } from "react-icons/io";
+import Foot from "../components/Foot";
 
-function Work({ setStep }) {
+function Work() {
   const [first, setFirst] = useState(null);
   const [second, setSecond] = useState(null);
   const [third, setThird] = useState(null);
@@ -109,9 +110,7 @@ function Work({ setStep }) {
         )}
       </div>
 
-      <button onClick={() => setStep(0)} className="btn-primary w-full">
-        Upload photos
-      </button>
+      <Foot next="" format="single" />
     </div>
   );
 }

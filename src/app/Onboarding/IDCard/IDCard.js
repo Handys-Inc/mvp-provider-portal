@@ -7,14 +7,18 @@ import { IoIosCloseCircle } from "react-icons/io";
 
 // rc
 import { AiOutlineIdcard, AiOutlineCreditCard } from "react-icons/ai";
+import Foot from "../components/Foot";
 
-function IDCard({ setStep }) {
+function IDCard() {
   const [front, setFront] = useState(null);
   const [back, setBack] = useState(null);
 
   return (
     <div className="card">
-      <h4 className="text-3xl font-semibold mb-5">
+      <h4
+        // another comment
+        className="text-3xl font-semibold mb-5"
+      >
         Upload photos of your ID card
       </h4>
       <p>
@@ -74,6 +78,7 @@ function IDCard({ setStep }) {
         ) : (
           // show preview of front
           <div className="upload-card">
+            {/* random comment */}
             <IoIosCloseCircle
               onClick={() => setBack(null)}
               className="upload-remove"
@@ -88,9 +93,7 @@ function IDCard({ setStep }) {
         )}
       </div>
 
-      <button onClick={() => setStep(5)} className="btn-primary w-full">
-        Finish
-      </button>
+      <Foot format="single" next="insurance" />
     </div>
   );
 }

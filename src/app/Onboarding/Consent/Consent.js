@@ -1,8 +1,9 @@
 import React from "react";
 
 import Border from "../../../components/Border/Border";
+import Foot from "../components/Foot";
 
-function Consent({ setStep }) {
+function Consent() {
   return (
     <div className="card">
       <h4 className="text-2xl md:text-4xl font-semibold mb-5">Legal conset</h4>
@@ -24,15 +25,7 @@ function Consent({ setStep }) {
           <input type="checkbox" />
         </div>
       </div>
-      <div className="card-footer">
-        <button onClick={() => setStep(0)} className="btn-primary-outline">
-          Back
-        </button>
-
-        <button onClick={() => setStep(2)} className="btn-primary">
-          Next
-        </button>
-      </div>
+      <Foot next="job" />
     </div>
   );
 }

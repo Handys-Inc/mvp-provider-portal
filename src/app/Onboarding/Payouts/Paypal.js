@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { NavLink } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 import { MdArrowBack, MdArrowForward } from "react-icons/md";
 import { HiLockClosed } from "react-icons/hi";
@@ -11,19 +11,20 @@ import Border from "../../../components/Border/Border";
 
 import Verify from "./components/Verify";
 import ExistingAccount from "./components/ExistingAccount";
-import OnboardHeader from "../components/OnboardHeader";
+
 
 function Paypal() {
   const [owner, setOwner] = useState(null);
   const [accountType, setAccountType] = useState(null);
   const [businessName, setBusinessName] = useState(null);
 
+  const navigate = useNavigate();
+
   //
   const [existingModal, setExistingModal] = useState(false);
   const [verifyModal, setVerifyModal] = useState(false);
   return (
-    <div className="holder">
-      <OnboardHeader />
+    <React.Fragment>
       <div className="card">
         <h2 className="text-3xl font-medium">Who owns this Paypal account?</h2>
         <p className="text-normal text-gray mt-2">
@@ -114,11 +115,11 @@ function Paypal() {
         {/* Back and confirm */}
         <div className="flex justify-between my-5">
           <div>
-            <NavLink to="/onboarding?step=2">
-              <button className="btn-primary-outline">
-                <MdArrowBack className="mr-1 inline" size={24} /> Back
-              </button>
-            </NavLink>
+
+            <button onClick={() => navigate(-1)} className="btn-primary-outline">
+              <MdArrowBack className="mr-1 inline" size={24} /> Back
+            </button>
+
           </div>
 
           <button disabled={owner === null} className="btn-primary">
@@ -152,7 +153,7 @@ function Paypal() {
       <Modal title="" isOpen={verifyModal} setIsOpen={setVerifyModal}>
         <Verify />
       </Modal>
-    </div>
+    </React.Fragment>
   );
 }
 

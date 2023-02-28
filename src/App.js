@@ -13,10 +13,21 @@ import MobileHelp from "./app/Menu/MobileHelp/MobileHelp";
 import MobileResources from "./app/Menu/MobileResources/MobileResources";
 import Messages from "./app/Messaging/Messages";
 import Calendar from "./app/Calendar/Calendar";
-import Onboarding from "./app/Onboarding/Onboarding";
+
+
+
+// onboarding routes
 import Interac from "./app/Onboarding/Payouts/Interac";
 import Paypal from "./app/Onboarding/Payouts/Paypal";
 import Profile from "./app/Profile/Profile";
+import OnboardingLayout from "./app/Onboarding/OnboardingLayout";
+import List from "./app/Onboarding/CheckList/List";
+import Consent from './app/Onboarding/Consent/Consent'
+import JobProfile from "./app/Onboarding/JobProfile/JobProfile";
+import PersonalPhoto from "./app/Onboarding/PersonalPhoto/PersonalPhoto";
+import IDCard from "./app/Onboarding/IDCard/IDCard";
+import Insurance from "./app/Onboarding/Insurance/Insurance";
+import Work from "./app/Onboarding/Work/Work";
 
 function App() {
   return (
@@ -31,9 +42,26 @@ function App() {
         <Route path="/calendar" exact element={<Calendar />} />
 
         {/* onboarding */}
-        <Route path="/onboarding" exact element={<Onboarding />} />
-        <Route path="/onboarding/interac" exact element={<Interac />} />
-        <Route path="/onboarding/paypal" exact element={<Paypal />} />
+        <Route path="/onboarding" element={<OnboardingLayout />}>
+          <Route index element={<List />} />
+
+          {/* Payments*/}
+          <Route path="interac" element={<Interac />} />
+          <Route path="paypal" element={<Paypal />} />
+
+
+          <Route path="consent" element={<Consent />} />
+          <Route path="job" element={<JobProfile />} />
+          <Route path="profile-photo" element={<PersonalPhoto />} />
+          <Route path="id-card" element={<IDCard />} />
+          <Route path="insurance" element={<Insurance />} />
+          <Route path="completed-jobs" element={<Work />} />
+          {/* <Route path="provider/#legal" element={<ProviderCategory />} /> */}
+
+
+
+        </Route>
+
 
         {/* mobile specific */}
         <Route path="/menu" exact element={<Menu />} />
