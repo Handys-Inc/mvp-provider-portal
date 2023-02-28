@@ -12,8 +12,9 @@ import { NavLink } from "react-router-dom";
 import DateRange from "./components/DateRange";
 
 import { FiEdit2 } from "react-icons/fi";
+import Foot from "../components/Foot";
 
-function JobProfile({ setStep }) {
+function JobProfile({ next }) {
   const [booking, setBooking] = useState("instant");
 
   const [showPicker, setShowPicker] = useState(false);
@@ -166,11 +167,8 @@ function JobProfile({ setStep }) {
       </div>
 
       {/* Continue */}
-      <div className="card-footer">
-        <button onClick={() => setStep(3)} className="btn-primary w-full">
-          Continue
-        </button>
-      </div>
+
+      <Foot format="single" next="profile-photo" />
 
       {/* Availability Modal */}
       <Modal

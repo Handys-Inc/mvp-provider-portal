@@ -7,8 +7,9 @@ import { RiUserAddLine } from "react-icons/ri";
 import { TbFaceId } from "react-icons/tb";
 import { BiBriefcaseAlt } from "react-icons/bi";
 import { IoDocumentTextOutline } from "react-icons/io5";
+import { NavLink } from "react-router-dom";
 
-function List({ setStep }) {
+function List() {
   return (
     <div className="card">
       {/* Intro */}
@@ -19,22 +20,25 @@ function List({ setStep }) {
         </p>
         <div className="my-4">
           {/* Legal Requirement */}
-          <div onClick={() => setStep(1)} className="list-card">
-            <div className="flex gap-5 items-center">
-              {/* icon */}
-              <div className="list-card-icon">
-                <CgFileDocument />
+          <NavLink to="consent">
+            <div className="list-card">
+              <div className="flex gap-5 items-center">
+                {/* icon */}
+                <div className="list-card-icon">
+                  <CgFileDocument />
+                </div>
+                <div className="text-left">
+                  <h4>Legal agreeement</h4>
+                  <p className="text-primary font-light">Recommended next step</p>
+                </div>
               </div>
-              <div className="text-left">
-                <h4>Legal agreeement</h4>
-                <p className="text-primary font-light">Recommended next step</p>
-              </div>
+              <BsArrowRight className="text-gray" size={24} />
             </div>
-            <BsArrowRight className="text-gray" size={24} />
-          </div>
+          </NavLink>
+
 
           {/* Job Profile  */}
-          <div onClick={() => setStep(2)} className="list-card">
+          <NavLink to="job">    <div className="list-card">
             <div className="flex gap-5 items-center">
               {/* icon */}
               <div className="list-card-icon">
@@ -46,10 +50,11 @@ function List({ setStep }) {
               </div>
             </div>
             <BsArrowRight className="text-gray" size={24} />
-          </div>
+          </div> </NavLink>
+
 
           {/* Profile photo */}
-          <div onClick={() => setStep(3)} className="list-card">
+          <NavLink to="profile-photo"> <div className="list-card">
             <div className="flex gap-5 items-center">
               {/* icon */}
               <div className="list-card-icon">
@@ -61,10 +66,11 @@ function List({ setStep }) {
               </div>
             </div>
             <BsArrowRight className="text-gray" size={24} />
-          </div>
+          </div> </NavLink>
+
 
           {/* ID CARD */}
-          <div onClick={() => setStep(4)} className="list-card">
+          <NavLink to="id-card">     <div className="list-card">
             <div className="flex gap-5 items-center">
               {/* icon */}
               <div className="list-card-icon">
@@ -76,10 +82,11 @@ function List({ setStep }) {
               </div>
             </div>
             <BsArrowRight className="text-gray" size={24} />
-          </div>
+          </div> </NavLink>
+
 
           {/* Insurance */}
-          <div onClick={() => setStep(5)} className="list-card">
+          <NavLink to="insurance">   <div className="list-card">
             <div className="flex gap-5 items-center">
               {/* icon */}
               <div className="list-card-icon">
@@ -91,10 +98,11 @@ function List({ setStep }) {
               </div>
             </div>
             <BsArrowRight className="text-gray" size={24} />
-          </div>
+          </div> </NavLink>
+
 
           {/* Three photos */}
-          <div onClick={() => setStep(6)} className="list-card">
+          <NavLink to="completed-jobs">   <div className="list-card">
             <div className="flex gap-5 items-center">
               {/* icon */}
               <div className="list-card-icon">
@@ -106,7 +114,8 @@ function List({ setStep }) {
               </div>
             </div>
             <BsArrowRight className="text-gray" size={24} />
-          </div>
+          </div> </NavLink>
+
 
           <button disabled className="w-10/12 mx-auto  px-5 my-5 btn-primary">
             Finish setup

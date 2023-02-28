@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import Modal from "../../../components/Modal/Modal";
 import Camera from "./components/Camera";
+import Foot from "../components/Foot";
 
 function PersonalPhoto({ setStep }) {
   const [picture, setPicture] = useState(null);
@@ -31,12 +32,7 @@ function PersonalPhoto({ setStep }) {
           <div className="border border-mute mx-auto text-center inline-block p-2 rounded-xl">
             <img className="rounded-xl" src={picture} alt="captured " />
           </div>
-          <button
-            onClick={() => setStep(4)}
-            className="btn-primary w-full md:w-9/12 my-5"
-          >
-            Continue
-          </button>
+          <Foot next="id-card" format="single" />
         </div>
       ) : (
         <div className="border border-mute mb-5 rounded-lg flex items-center justify-center w-full h-[10rem]">

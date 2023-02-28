@@ -1,15 +1,17 @@
 import React, { useState } from "react";
-import OnboardHeader from "../components/OnboardHeader";
+
 
 import { MdArrowBack } from "react-icons/md";
 
-import { NavLink } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 function Interac() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState(null);
   return (
-    <div className="holder">
-      <OnboardHeader />
+    <React.Fragment>
+
+
       <div className="card">
         {" "}
         <div className="w-full md:max-w-xl mx-auto mt-5">
@@ -31,11 +33,11 @@ function Interac() {
           {/* Back and confirm */}
           <div className="flex justify-between my-5">
             <div>
-              <NavLink to="/onboarding?step=2">
-                <button className="btn-primary-outline">
-                  <MdArrowBack className="mr-1 inline" size={24} /> Back
-                </button>
-              </NavLink>
+
+              <button onClick={() => navigate(-1)} className="btn-primary-outline">
+                <MdArrowBack className="mr-1 inline" size={24} /> Back
+              </button>
+
             </div>
 
             <button disabled={email === null} className="btn-primary">
@@ -44,7 +46,7 @@ function Interac() {
           </div>
         </div>
       </div>
-    </div>
+    </React.Fragment>
   );
 }
 
