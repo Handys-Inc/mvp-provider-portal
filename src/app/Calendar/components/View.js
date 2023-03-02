@@ -116,12 +116,12 @@ export default function View({ view, currentFocus }) {
   const [selectedJob, setSelectedJob] = useState({});
 
   return (
-    <div className="mb-20">
+    <div className="mb-20 w-full">
       {view === "monthly" ? (
         // SHOWING PER MONTH
         <div className="w-full">
-          <div className="md:grid md:grid-cols-1 md:divide-x md:divide-gray-200">
-            <div className="md:pr-14">
+          <div className="w-full  md:grid md:grid-cols-1 md:divide-x md:divide-gray-200">
+            <div className="">
               <div className="flex items-center">
                 {/* <h2 className="flex-auto font-semibold text-gray-900">
                   {format(firstDayCurrentMonth, "MMMM yyyy")}
