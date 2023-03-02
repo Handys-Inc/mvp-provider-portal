@@ -1,5 +1,5 @@
 .offer-card {
-  @apply border border-none md:border-solid md:border-gray rounded-xl p-3 md:p-5;
+  @apply border border-solid border-gray mb-5 md:mb-0 rounded-xl p-3 md:p-5;
 }
 
 .offer-card p {

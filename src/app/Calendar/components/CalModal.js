@@ -49,7 +49,7 @@ export default function Modal({
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-6/12  transform overflow-hidden rounded-tl-lg rounded-bl-lg border border-faintGray bg-white p-3 md:p-6 h-screen shadow-md transition-all">
+                <Dialog.Panel className="w-4/12  transform overflow-hidden rounded-tl-lg rounded-bl-lg border border-faintGray bg-white p-3 md:p-6 h-screen shadow-md transition-all">
                   <div className="flex flex-row justify-between mb-5 md:mb-0">
                     <h3 className="text-lg font-semibold">{title}</h3>
                     <GrClose
