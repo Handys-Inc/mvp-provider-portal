@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Menu, Transition } from "@headlessui/react";
 import { DotsVerticalIcon } from "@heroicons/react/outline";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid";
+
 import {
   add,
   eachDayOfInterval,
@@ -168,25 +168,25 @@ export default function View({ view, currentFocus }) {
                       className={classNames(
                         isEqual(day, selectedDay) && "text-primary",
                         !isEqual(day, selectedDay) &&
-                          isToday(day) &&
-                          "text-primary",
+                        isToday(day) &&
+                        "text-primary",
                         !isEqual(day, selectedDay) &&
-                          !isToday(day) &&
-                          isSameMonth(day, firstDayCurrentMonth) &&
-                          "text-black",
+                        !isToday(day) &&
+                        isSameMonth(day, firstDayCurrentMonth) &&
+                        "text-black",
                         !isEqual(day, selectedDay) &&
-                          !isToday(day) &&
-                          !isSameMonth(day, firstDayCurrentMonth) &&
-                          "text-black text-opacity-30",
+                        !isToday(day) &&
+                        !isSameMonth(day, firstDayCurrentMonth) &&
+                        "text-black text-opacity-30",
                         isEqual(day, selectedDay) &&
-                          isToday(day) &&
-                          "font-bold text-primary",
+                        isToday(day) &&
+                        "font-bold text-primary",
                         isEqual(day, selectedDay) &&
-                          !isToday(day) &&
-                          "bg-gray-900",
+                        !isToday(day) &&
+                        "bg-gray-900",
                         !isEqual(day, selectedDay) && "",
                         (isEqual(day, selectedDay) || isToday(day)) &&
-                          "font-semibold",
+                        "font-semibold",
                         "flex w-full h-1/3 justify-end pr-3 pt-3"
                       )}
                     >
@@ -227,7 +227,7 @@ export default function View({ view, currentFocus }) {
                               {/* MODAL */}
                               <Modal
                                 title="Job Details"
-                                full={true}
+                                full={false}
                                 isOpen={showJob}
                                 setIsOpen={setShowJob}
                               >
@@ -294,25 +294,25 @@ export default function View({ view, currentFocus }) {
                           className={classNames(
                             isEqual(day, selectedDay) && "text-primary",
                             !isEqual(day, selectedDay) &&
-                              isToday(day) &&
-                              "text-primary",
+                            isToday(day) &&
+                            "text-primary",
                             !isEqual(day, selectedDay) &&
-                              !isToday(day) &&
-                              isSameMonth(day, firstDayCurrentMonth) &&
-                              "text-black",
+                            !isToday(day) &&
+                            isSameMonth(day, firstDayCurrentMonth) &&
+                            "text-black",
                             !isEqual(day, selectedDay) &&
-                              !isToday(day) &&
-                              !isSameMonth(day, firstDayCurrentMonth) &&
-                              "text-black text-opacity-30",
+                            !isToday(day) &&
+                            !isSameMonth(day, firstDayCurrentMonth) &&
+                            "text-black text-opacity-30",
                             isEqual(day, selectedDay) &&
-                              isToday(day) &&
-                              "font-bold text-primary",
+                            isToday(day) &&
+                            "font-bold text-primary",
                             isEqual(day, selectedDay) &&
-                              !isToday(day) &&
-                              "bg-gray-900",
+                            !isToday(day) &&
+                            "bg-gray-900",
                             !isEqual(day, selectedDay) && "",
                             (isEqual(day, selectedDay) || isToday(day)) &&
-                              "font-semibold",
+                            "font-semibold",
                             "flex w-full h-1/3 justify-end pr-3 pt-3"
                           )}
                         >
