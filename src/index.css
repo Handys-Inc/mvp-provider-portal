@@ -111,6 +111,10 @@ input[type="file"] {
   @apply bg-none border border-primary rounded-full text-primary px-5 md:px-8 py-2  text-sm md:text-base;
 }
 
+.btn-primary-outline:disabled {
+  @apply bg-none border border-gray rounded-full cursor-not-allowed text-gray px-5 md:px-8 py-2  text-sm md:text-base;
+}
+
 .btn-dark-outline-sm {
   @apply bg-none border border-gray rounded-full text-gray px-3 md:px-3 py-1 md:py-2 text-xs md:text-xs;
 }

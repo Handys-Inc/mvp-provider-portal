@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Layout from "../../../components/Layout/Layout";
 
@@ -12,8 +12,12 @@ import Modal from '../../../components/Modal/Modal'
 import { articles } from "../../../content/articles/articles";
 
 function MobileResources() {
-  const [selectedArticle, setSelectedArticle] = useState({title: "null", image: null, content: null});
+  const [selectedArticle, setSelectedArticle] = useState({ title: "null", image: null, content: null });
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [selectedArticle]);
 
   return (
     <Layout current="menu" showHeader={false}>
@@ -66,7 +70,22 @@ function MobileResources() {
           />
         </div>
 
-        <div className="my-10 max-w-xl mx-auto">{selectedArticle.content}</div>
+        <div className="my-10 px-5 md:px-0 max-w-xl mx-auto">{selectedArticle.content}</div>
+        <div className="flex max-w-xl mx-auto justify-between">
+          <button
+            onClick={() =>
+              setSelectedArticle(articles.filter((article) => article.id === selectedArticle.id - 1)[0])
+            }
+
+            disabled={selectedArticle.id === 1} className="btn-primary-outline">Back</button>
+          <button onClick={() => {
+            setSelectedArticle(articles.filter((article) => article.id === selectedArticle.id + 1)[0])
+          }}
+
+            disabled={selectedArticle.id === 3} className="btn-primary">Next</button>
+        </div>
+
+
       </Modal>
     </Layout>
   );
