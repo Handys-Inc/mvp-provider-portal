@@ -10,7 +10,7 @@ import { IoImage } from "react-icons/io5";
 
 function MessageView({ setDetails, details }) {
   return (
-    <div className="relative h-[88vh]  overflow-y-scroll">
+    <div className="relative h-[88vh]  overflow-y-none">
       {/* Header for who it is and onine status */}
       <div className="h-16 flex justify-between items-center">
         <div>

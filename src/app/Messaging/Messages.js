@@ -17,15 +17,14 @@ function Messages() {
 
       {/* Desktop */}
       {/* Selector Pane */}
-      <div className="hidden md:flex h-[88vh] overflow-y-scroll">
+      <div className="hidden md:flex h-[83vh] overflow-y-none">
         <div className="w-[22rem] border-r border-r-faintGray">
           <Selector />
         </div>
         <div className="flex h-[88vh] flex-1">
           <div
-            className={`${
-              details ? "w-2/3 border-r border-r-faintGray" : "w-full"
-            }`}
+            className={`${details ? "w-2/3 border-r border-r-faintGray" : "w-full"
+              }`}
           >
             <MessageView setDetails={setDetails} details={details} />
           </div>
