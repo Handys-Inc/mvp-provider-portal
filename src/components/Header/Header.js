@@ -8,7 +8,7 @@ import { Fragment } from "react";
 
 import { NavLink } from "react-router-dom";
 
-import Profile from "../../assets/images/profile.png";
+import Avatar from "../Avatar/Avatar";
 
 import Bell from "../../assets/custom-svgs/Bell";
 
@@ -57,10 +57,7 @@ function Header() {
 
         {/* Profile  */}
         <div className="flex items-center gap-2">
-          <a
-            className="hidden md:block"
-            href="https://customer-handys.netlify.app/"
-          >
+          <a href={`${process.env.REACT_APP_CUSTOMER}`}>
             <p>Switch to customer portal</p>
           </a>
 
@@ -95,7 +92,7 @@ function Header() {
           </div>
           {/* END OF NOTIFICATIONS MODAL */}
 
-          <img className="hidden md:block w-10" src={Profile} alt="user" />
+          <Avatar />
         </div>
       </div>
       <div className="text-faintGray hidden md:block">

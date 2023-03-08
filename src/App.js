@@ -6,6 +6,8 @@ import Today from "./app/Today/Today";
 
 // notfound
 import NotFound from "./app/NotFound/NotFound";
+
+// components
 import Perks from "./app/Perks/Perks";
 import Transactions from "./app/Transactions/Transactions";
 import Menu from "./app/Menu/Menu";
@@ -13,6 +15,10 @@ import MobileHelp from "./app/Menu/MobileHelp/MobileHelp";
 import MobileResources from "./app/Menu/MobileResources/MobileResources";
 import Messages from "./app/Messaging/Messages";
 import Calendar from "./app/Calendar/Calendar";
+
+// contexts
+import AuthContextProvider from "./contexts/AuthContext";
+import { CookiesProvider } from "react-cookie";
 
 
 
@@ -32,6 +38,11 @@ import Work from "./app/Onboarding/Work/Work";
 function App() {
   return (
     <BrowserRouter>
+         <CookiesProvider>
+          <AuthContextProvider>
+
+
+     
       <Routes>
         {/*General Routes */}
         <Route path="/" exact element={<Today />} />
@@ -57,9 +68,6 @@ function App() {
           <Route path="insurance" element={<Insurance />} />
           <Route path="completed-jobs" element={<Work />} />
           {/* <Route path="provider/#legal" element={<ProviderCategory />} /> */}
-
-
-
         </Route>
 
 
@@ -71,6 +79,8 @@ function App() {
         {/* PAGE NOT FOUND */}
         <Route path="*" exact element={<NotFound />} />
       </Routes>
+           </AuthContextProvider>
+          </CookiesProvider>
     </BrowserRouter>
   );
 }
