@@ -21,7 +21,7 @@ const AuthContextProvider = (props) => {
   useEffect(() => {
     if (cookies.user === undefined && dataFromLS === null) {
       setCurrentUser(null);
-      window.open(`${process.env.REACT_APP_MAIN}/login/client`, "_self");
+      window.open(`${process.env.REACT_APP_MAIN}/login/provider`, "_self");
     }
     if (cookies.user && dataFromLS === null) {
       localStorage.setItem("user", JSON.stringify(cookies.user));
