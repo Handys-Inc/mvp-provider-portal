@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 // router
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -6,6 +6,10 @@ import Today from "./app/Today/Today";
 
 // notfound
 import NotFound from "./app/NotFound/NotFound";
+
+// protected route
+import {ProtectedRoutes} from './routes/ProtectedRoutes'
+
 
 // components
 import Perks from "./app/Perks/Perks";
@@ -19,8 +23,6 @@ import Calendar from "./app/Calendar/Calendar";
 // contexts
 import AuthContextProvider from "./contexts/AuthContext";
 import { CookiesProvider } from "react-cookie";
-
-
 
 // onboarding routes
 import Interac from "./app/Onboarding/Payouts/Interac";
@@ -36,14 +38,32 @@ import Insurance from "./app/Onboarding/Insurance/Insurance";
 import Work from "./app/Onboarding/Work/Work";
 
 function App() {
+    const authenticate = () => {
+    return new Promise((resolve) => setTimeout(resolve, 1000)); // 2 seconds
+  };
+
+  useEffect(() => {
+    authenticate().then(() => {
+      const ele = document.getElementById("ipl-progress-indicator");
+      if (ele) {
+        // fade out
+        ele.classList.add("available");
+        setTimeout(() => {
+          // remove from DOM
+          ele.outerHTML = "";
+        }, 2000);
+      }
+    });
+  }, []);
+
   return (
     <BrowserRouter>
          <CookiesProvider>
           <AuthContextProvider>
-
-
-     
       <Routes>
+         <Route element={<ProtectedRoutes/>} >
+
+       
         {/*General Routes */}
         <Route path="/" exact element={<Today />} />
         <Route path="/profile" exact element={<Profile />} />
@@ -78,6 +98,7 @@ function App() {
 
         {/* PAGE NOT FOUND */}
         <Route path="*" exact element={<NotFound />} />
+          </Route>
       </Routes>
            </AuthContextProvider>
           </CookiesProvider>
