@@ -39,7 +39,7 @@ import Work from "./app/Onboarding/Work/Work";
 
 function App() {
     const authenticate = () => {
-    return new Promise((resolve) => setTimeout(resolve, 1000)); // 2 seconds
+    return new Promise((resolve) => setTimeout(resolve, 500)); // 2 seconds
   };
 
   useEffect(() => {
@@ -51,7 +51,7 @@ function App() {
         setTimeout(() => {
           // remove from DOM
           ele.outerHTML = "";
-        }, 2000);
+        }, 500);
       }
     });
   }, []);
@@ -62,7 +62,6 @@ function App() {
           <AuthContextProvider>
       <Routes>
          <Route element={<ProtectedRoutes/>} >
-
        
         {/*General Routes */}
         <Route path="/" exact element={<Today />} />

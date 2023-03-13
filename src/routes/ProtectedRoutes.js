@@ -7,11 +7,13 @@ import { AuthContext } from "../contexts/AuthContext";
 // state from redux
 
 export const ProtectedRoutes = () => {
- const { currentUser } = useContext(AuthContext);
+  // const { currentUser } = useContext(AuthContext);
+
+  let currentUser = true;
 
   return Boolean(currentUser) ? (
     <Outlet />
   ) : (
-    <>{window.open(`${process.env.REACT_APP_MAIN}/login/client`, "_self")}</>
+    <>{window.open(`${process.env.REACT_APP_MAIN}/login/provider`, "_self")}</>
   );
 };
