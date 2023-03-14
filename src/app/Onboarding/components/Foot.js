@@ -32,6 +32,10 @@ navigate(`/onboarding/${next}`)
 })
    
   }
+
+  if(type==="job"){
+    // run job update here
+  }
 }
 
   return (
