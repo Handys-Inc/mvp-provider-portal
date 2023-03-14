@@ -1,9 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 
 import Border from "../../../components/Border/Border";
 import Foot from "../components/Foot";
 
 function Consent() {
+
+const [allow, setAllow] = useState(false)
+
   return (
     <div className="card">
       <h4 className="text-2xl md:text-4xl font-semibold mb-5">Legal conset</h4>
@@ -22,10 +25,10 @@ function Consent() {
       <div className="flex my-5 mb-10 justify-between">
         <h3>I Agree</h3>
         <div>
-          <input type="checkbox" />
+          <input value={allow} onChange={() => setAllow(!allow)} type="checkbox" />
         </div>
       </div>
-      <Foot next="job" />
+      <Foot type="consent" allow={allow} next="job" />
     </div>
   );
 }

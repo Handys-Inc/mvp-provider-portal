@@ -30,6 +30,10 @@
   @apply rounded-full bg-silent hover:bg-lightSecondary text-sm cursor-pointer p-2 px-4 font-light;
 }
 
+.pill-selected {
+  @apply rounded-full bg-primary text-white text-sm cursor-pointer p-2 px-4 font-light;
+}
+
 .list-disc {
   @apply text-xs;
 }
