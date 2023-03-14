@@ -1,11 +1,19 @@
 import React, {useEffect} from "react";
 
+// Notify Messages
+// toast messages
+import "react-toastify/dist/ReactToastify.css";
+
+import { ToastContainer } from "react-toastify";
+
 // router
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Today from "./app/Today/Today";
 
 // notfound
 import NotFound from "./app/NotFound/NotFound";
+
+
 
 // protected route
 import {ProtectedRoutes} from './routes/ProtectedRoutes'
@@ -39,7 +47,7 @@ import Work from "./app/Onboarding/Work/Work";
 
 function App() {
     const authenticate = () => {
-    return new Promise((resolve) => setTimeout(resolve, 1000)); // 2 seconds
+    return new Promise((resolve) => setTimeout(resolve, 300)); // 2 seconds
   };
 
   useEffect(() => {
@@ -51,19 +59,28 @@ function App() {
         setTimeout(() => {
           // remove from DOM
           ele.outerHTML = "";
-        }, 2000);
+        }, 300);
       }
     });
   }, []);
 
   return (
     <BrowserRouter>
+     <ToastContainer
+        position="top-right"
+        autoClose={4000}
+        hideProgressBar
+        newestOnTop={true}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
          <CookiesProvider>
           <AuthContextProvider>
       <Routes>
          <Route element={<ProtectedRoutes/>} >
-
-       
         {/*General Routes */}
         <Route path="/" exact element={<Today />} />
         <Route path="/profile" exact element={<Profile />} />
